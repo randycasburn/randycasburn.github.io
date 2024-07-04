@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy</title>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <style>
+        .tabs {
+            position: relative;
+        }
+        .tabs .tab {
+            /*background: #fff;*/
+            /*position: absolute;*/
+            /*width: 100%;*/
+            /*opacity: 0;*/
+            /*visibility: hidden;*/
+            /*padding: 10px;*/
+            display: none;
+            top: 50px;
+            transition: all 0.4s;
+        }
+        .tabs .tab.active {
+             opacity: 1;
+            display: block;
+             visibility: visible;
+             top:  0;
+             transition: all 0.4s;
+         }
+    </style>
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+                <a href="index.html" class="logo"><strong>WF Watch App</strong> by Randy Casburn</a>
+                <a href="whereisit.html" class="logo icons">Where Can I Find This App?</a>
+            </header>
+
+            <!-- Content -->
+            <section>
+                <header class="main">
+                    <h1><img style="vertical-align: middle" src="images/1024x1024bb.png" width="100" height="100"> WF Watch App Instructions</h1>
+                </header>
+
+                <br>
+                <div>
+                    <button data-toggle="tab" data-tabs=".tabs.tabContainer" data-tab=".tab-1" class="btn btn-info" >First Launch</button>
+                    <button data-toggle="tab" data-tabs=".tabs.tabContainer" data-tab=".tab-2" class="btn btn-info" >Normal Operation</button>
+                    <button data-toggle="tab" data-tabs=".tabs.tabContainer" data-tab=".tab-3" class="btn btn-info" >Additional Views</button>
+                </div>
+                <br>
+                <div class="tabs tabContainer" >
+                    <div class="tab tab-1">
+                        <h2>First Launch:</h2>
+
+                        <h4>Step 1: Log in</h4>
+                        <p>Use your WeatherFlow account credentials from your <a href="https://tempest.earth/personal-apps/ikitesurf-com/" target="_blank">Life Style App</a> to log in:</p>
+
+                        <img src="images/Screenshot 2024-07-04 at 1.39.29 PM.png" height="234" width="904"/>
+
+                        <p><a href="https://support.apple.com/en-us/105115" target="_blank">How to find stored passwords on Mac or Safari</a><br>
+                            <a href="https://support.google.com/chrome/answer/95606?hl=en&co=GENIE.Platform=Desktop#zippy=,show-edit-delete-or-export-saved-passwords">How to find stored passwords on Chrome</a></p>
+
+                        <h4>Step 2: Initial Settings</h4>
+
+                        <p>Select your measurement choices in the settings screen:</p>
+                        <img src="images/Screenshot 2024-07-04 at 1.44.54 PM.png" height="234" width="910"/>
+
+                        <h4>Step 3: Setup WaterLock (optional)</h4>
+                        <p>Press the green water drop button on the bottom left of the main screen:</p>
+                        <img src="images/Screenshot 2024-07-04 at 1.42.04 PM.png" height="252" width="1030"/>
+                        <ol>
+                            <li>Tap <code>Review</code></li>
+                            <li>Select <code>All Requested Data Below</code></li>
+                            <li>Scroll and Tap <code>Next</code></li>
+                            <li>Select <code>All Requested Data Below</code></li>
+                            <li>Scroll and Tap <code>Done</code></li>
+                            <li>Close and reopen the app ( <a href="https://support.apple.com/en-ie/guide/watch/apda1bf1a95b/10.0/watchos/10.0#apd2dcbbd34b" target="_blank">How to Close an App</a> )</li>
+                            <br>
+                            <img src="images/Simulator Screenshot - Apple Watch Series 9 (45mm) - 2024-07-04 at 09.31.08.png"
+                                 height="242" width="200"/></ol>
+                        <button data-toggle="tab" data-tabs=".tabs.tabContainer" data-tab=".tab-2" class="ui button" >Normal Operation</button>
+                    </div>
+
+                    <div class="tab tab-2">
+                        <h2>Subsequent Launches:</h2>
+
+                        <h4>Logging In:</h4>
+
+                        <p>You should automatically be logged since the app securely stores your credentials in the keychain.
+                            It's possible that you've been logged out by Weatherflow. If so, follow the instructions for logging
+                            in above.</p>
+
+                        <h4>App Navigation</h4>
+
+                        <p>The main screen with the compass and wind speed is a scrollable list of the weather stations (spots)
+                            that have been recorded in your Favorites Profiles in your WeatherFlow app or web site.</p>
+
+                        <p>The map and chart views are station specific. Scroll to the station of choice and the other views
+                            change to reflect data from the selected station.</p>
+                            <img src="images/wfwatchflow-2.png" height="881" width="620"/>
+                    </div>
+
+                    <div class="tab tab-3">
+                        <h2>Other Views</h2>
+
+                        <h4>Watch Loses Connection (Wi-Fi or Cellular)</h4>
+
+                        <img src="images/Screenshot 2024-07-04 at 1.42.35 PM.png" height="350" width="910"/>
+                    </div>
+                </div>
+            </section>
+                <hr>
+            <!-- Footer -->
+            <footer id="footer">
+                <p class="copyright">&copy; Randy Casburn. All rights reserved. Design HTML5 UP.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="inner">
+            <!-- Menu -->
+            <nav id="menu">
+                <header class="major">
+                    <h2>Menu</h2>
+                </header>
+                <ul>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="instructions.html">Instructions</a></li>
+                    <li><a href="reportanissue.html">Report an Issue</a></li>
+                    <li><a href="whereisit.html">Where is this App?</a></li>
+                    <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    $("[data-toggle='tab']").click(function () {
+        var tabs = $(this).attr('data-tabs');
+        var tab = $(this).attr("data-tab");
+        $(tabs).find(".tab").removeClass("active");
+        $(tabs).find(tab).addClass("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
+
+</body>
