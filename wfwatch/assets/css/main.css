@@ -2084,6 +2084,11 @@ button,
     -ms-flex: 1;
     flex: 1;
     margin-bottom: 0; }
+  #header > img {
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+  }
   #header .logo {
     border-bottom: 0;
     color: inherit;
