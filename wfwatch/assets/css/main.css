@@ -1672,7 +1672,7 @@ button,
       flex-shrink: 1;
       width: 100%; }
       .features article .content > :last-child {
-        margin-bottom: 0; }
+        margin-bottom: 0;  }
   @media screen and (max-width: 980px) {
     .features {
       margin: 0 0 2em 0;
