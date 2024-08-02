@@ -1,0 +1,108 @@
+:root {
+    --secondary-color: #f56a6a;
+    --left-menu-width: 300px
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+    "nav header header"
+    "nav article ads"
+    "nav footer footer";
+    grid-template-rows: 120px 1fr 70px;
+    grid-template-columns: var(--left-menu-width) 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    height: 100vh;
+    margin: 0;
+}
+
+body > header, body > footer, body > main, body > nav, body > div {
+    padding: 1.2em;
+}
+
+body > header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 40px 70px 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    transition: margin-left .5s;
+    z-index: 999;
+    border-bottom: 3px solid;
+    border-color: var(--secondary-color);
+}
+body > header a:last-of-type {
+    justify-self: end;
+}
+
+body > footer {
+    grid-area: footer;
+    transition: margin-left .5s;
+}
+
+body > main {
+    grid-area: article;
+    transition: margin-left .5s;
+}
+body > main > header {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 150px 1fr;
+    padding-bottom: 20px;
+}
+body > main > header > span > span {
+    font-variant: petite-caps;
+}
+body > main > header h1 {
+    margin-block-end: 0;
+}
+
+body > nav {
+    position: fixed;
+    transition: margin-left .5s;
+    width: var(--left-menu-width);
+    height: 100vh;
+    background-color: #00e4ff;
+    padding:  0 0 1em 1em;
+}
+body > nav > ul {
+    list-style: none;
+}
+body > nav  ul > li {
+    padding: 1.5em 0;
+    border-bottom: 1px solid gray;
+}
+body > nav > ul > li > a {
+    text-decoration: none;
+}
+img {
+    vertical-align: center;
+}
+div.nav-toggle > div {
+    width: 35px;
+    height: 5px;
+    background-color: var(--secondary-color);
+    margin: 6px 2px;
+    border-radius: 3px;
+}
+div.nav-toggle:hover {
+    border-radius: 5px;
+    opacity: 60%;
+}
+
+
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+    body {
+        grid-template-areas:
+      "header"
+      "article"
+      "footer";
+        grid-template-rows: 120px 1fr 70px;
+        grid-template-columns: 1fr 1fr;
+    }
+    body > nav {
+        margin-left: var(--left-menu-width)
+    }
+}
