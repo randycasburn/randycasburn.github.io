@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenStreetMap with Marker</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-rotatedmarker/leaflet.rotatedMarker.js"></script>
+    <script src="ais_stream.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #map {
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <script>
+        let heading = 140;
+        var popupPosition = [0, 0]
+        switch (true) {
+            case (heading >= 290 || (heading >= 70 && heading < 90)):
+                popupPosition = [0, -10]
+                break;
+            case (heading >= 260 || (heading >= 90 && heading < 120)):
+                popupPosition = [0, -20]
+                break;
+            case (heading >= 220 || (heading >= 120 && heading < 140)):
+                popupPosition = [0, -30]
+                break;
+            case (heading >= 160):
+                popupPosition = [0, -50]
+                break;
+            case (heading >= 140):
+                popupPosition = [0, -35]
+                break;
+            default:
+                popupPosition = [0, 0]
+        }
+        const iconRotationOffset = 140; // Add this to the heading
+        const coords = [35.126417968000524, -77.02831139740792];
+        const longitude = -81.48812851501758;
+        // Initialize the map 
+        const map = L.map('map', { zoomAnimation: true }).setView(coords, 11); // Default to San Francisco (latitude, longitude, zoom level)
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Specify latitude and longitude for the marker
+
+        // Custom icon (optional)
+        const customIcon = L.icon({
+            iconUrl: '/cat-icon.png', // Replace with your icon URL
+            iconSize: [30, 50], // Size of the icon
+            iconAnchor: [0, 50], // Point of the icon which will correspond to marker's location
+            popupAnchor: popupPosition // Point from which the popup should open relative to the iconAnchor
+        });
+
+        // Add the marker
+        const marker = L.marker(coords, { icon: customIcon, rotationAngle: heading + iconRotationOffset }).addTo(map);
+
+
+        // Add a popup to the marker
+        marker.bindPopup("<b>Respite</b><br>0.0 kts").openPopup();
+    </script>
+</body>
+
+</html>

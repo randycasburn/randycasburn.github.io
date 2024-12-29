@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Favorites</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Coastal Navigation</h1>
+<ul id="favorites-list">
+    <li><a href="https://www.navcen.uscg.gov/msi" target="_blank">Local Notice to Mariners</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://www.navcen.uscg.gov/navigation-rules-amalgamated#:~:text=Rule%207%20%2D%20Risk%20of%20Collision" target="_blank">USCG Amalgamated Navigation Rules</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://www.marinetraffic.com/en/ais/home/centerx:-73.0/centery:39.0/zoom:9" target="_blank">MarineTraffic</a><button onclick="removeLink(this)">Remove</button></li>
+</ul>
+
+<h2>Gulf Stream</h2>
+<ul>
+    <li><a href="https://ocean.weather.gov/Loops/ocean_guidance.php?model=Global_RTOFS&area=GulfStream&plot=currents&day=1&loop=0" target="_blank">Global RTOFS High Resolution Oceanic Model</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://www.waterwayguide.com/knowledge-center/news-post/12252/crossing-the-gulf-stream" target="_blank">Cross Gulf Stream</a><button onclick="removeLink(this)">Remove</button></li>
+</ul>
+
+<h2>Weather</h2>
+<ul>
+    <li><a href="https://www.passageweather.com/" target="_blank">PassageWeather</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://www.wpc.ncep.noaa.gov/html/sfc-zoom.php" target="_blank">WPC Surface Analysis</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://www.windy.com/34.718/-76.659?34.206,-76.659,8" target="_blank">Windy</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://www.windfinder.com/forecast/beaufort_morehead_city" target="_blank">Beaufort</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://www.windfinder.com/forecast/5-miles-se-of-wrightsville-beach" target="_blank">Bouy Masonboro Inlet</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="http://magicseaweed.com/Okaloosa-Pier-Surf-Report/954/" target="_blank">Surfline - (old MSW)</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://wx.ikitesurf.com/spot/49092" target="_blank">Fort Macon</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://wx.ikitesurf.com/spot/49740" target="_blank">Wrightsville Buoy</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://wx.ikitesurf.com/map#34.266,-77.023,9,18" target="_blank">LiveWind, NC</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="http://www.lightningmaps.org/blitzortung/america/index.php?lang=en" target="_blank">Lightning Maps</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://www.wunderground.com/wundermap/?lat=30.41230583&lon=-86.71679688&zoom=8" target="_blank">WunderMap</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://nowcoast.noaa.gov/" target="_blank">nowCOAST</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://tidesandcurrents.noaa.gov/map/index.html" target="_blank">Tides and Currents</a><button onclick="removeLink(this)">Remove</button></li>
+</ul>
+
+<h2>Inlets</h2>
+<ul>
+    <li><a href="https://www.google.com/maps/d/viewer?hl=en&mid=1KFdlGvt6mSskVPlOF0bg8UV_BYxOeEg&ll=31.750380609756437%2C-77.85196342646736&z=7" target="_blank">East Coast Inlets</a><button onclick="removeLink(this)">Remove</button></li>
+    <li><a href="https://docs.google.com/spreadsheets/d/1Oa4t1tXRLPuwwTSBYGcuFQl88_7jmV1ISvrIzuae27w/edit?gid=1569919538#gid=1569919538" target="_blank">AICW vs Inlets</a><button onclick="removeLink(this)">Remove</button></li>
+</ul>
+
+<!-- Add Link Section -->
+<div class="add-link">
+    <h3>Add a New Link</h3>
+    <input type="text" id="link-name" placeholder="Link Name" />
+    <input type="url" id="link-url" placeholder="Link URL" />
+    <button onclick="addLink()">Add Link</button>
+</div>
+
+<script>
+    function addLink() {
+        const name = document.getElementById('link-name').value;
+        const url = document.getElementById('link-url').value;
+
+        if (name && url) {
+            const list = document.getElementById('favorites-list');
+            const newItem = document.createElement('li');
+            newItem.innerHTML = `
+                    <a href="${url}" target="_blank">${name}</a>
+                    <button onclick="removeLink(this)">Remove</button>
+                `;
+            list.appendChild(newItem);
+
+            // Clear input fields
+            document.getElementById('link-name').value = '';
+            document.getElementById('link-url').value = '';
+        } else {
+            alert('Please provide both a name and a URL.');
+        }
+    }
+
+    function removeLink(button) {
+        const item = button.parentElement;
+        item.remove();
+    }
+</script>
+</body>
+</html>
