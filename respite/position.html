@@ -75,6 +75,43 @@
         // Add a popup to the marker
         marker.bindPopup("<b>Respite</b><br>0.0 kts").openPopup();
     </script>
+
+<script>
+    // Replace this with the WSS URL you want to connect to
+    const WSS_URL = 'wss://https://respite-pi.vercel.app:8080';
+    
+    // Create a new WebSocket connection
+    const socket = new WebSocket(WSS_URL);
+
+    // Event: Connection Opened
+    socket.addEventListener('open', () => {
+      console.log('Connected to the WebSocket server.');
+
+      // Send a message to the server
+      socket.send(JSON.stringify({ type: 'greeting', message: 'Hello, Server!' }));
+    });
+
+    // Event: Message Received
+    socket.addEventListener('message', (event) => {
+      logMessage('Message from server: ' + event.data);
+
+      // Example: Sending a reply if a "ping" message is received
+      if (event.data.includes('ping')) {
+        socket.send(JSON.stringify({ type: 'pong', message: 'Pong!' }));
+      }
+    });
+
+    // Event: Error Occurred
+    socket.addEventListener('error', (event) => {
+      logMessage('WebSocket error occurred: ' + event.message);
+    });
+
+    // Event: Connection Closed
+    socket.addEventListener('close', (event) => {
+      logMessage(`WebSocket connection closed (Code: ${event.code}, Reason: ${event.reason})`);
+    });
+  </script>
+
 </body>
 
 </html>
