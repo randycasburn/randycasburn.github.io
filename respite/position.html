@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenStreetMap with Marker</title>
+    <title>Where is the Boat</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-rotatedmarker/leaflet.rotatedMarker.js"></script>
+    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <style>
         body {
             padding: 0;
@@ -27,6 +28,8 @@
     <script>
         let heading = 140;
         var popupPosition = [0, 0]
+        const latitude = localStorage.getItem('latitude');
+        const longitude = localStorage.getItem('longitude');
         switch (true) {
             case (heading >= 290 || (heading >= 70 && heading < 90)):
                 popupPosition = [0, -10]
@@ -47,8 +50,8 @@
                 popupPosition = [0, 0]
         }
         const iconRotationOffset = 140; // Add this to the heading
-        const coords = [35.126417968000524, -77.02831139740792];
-        const longitude = -81.48812851501758;
+        const coords = [latitude || 35.126417968000524, longitude || -77.02831139740792];
+
         // Initialize the map 
         const map = L.map('map', { zoomAnimation: true }).setView(coords, 11); // Default to San Francisco (latitude, longitude, zoom level)
 
@@ -73,44 +76,38 @@
 
 
         // Add a popup to the marker
-        marker.bindPopup("<b>Respite</b><br>0.0 kts").openPopup();
+        marker.bindPopup("<b>Waiting to connect...</b>").openPopup();
     </script>
 
-<script>
-    // Replace this with the WSS URL you want to connect to
-    const WSS_URL = 'wss://https://respite-pi.vercel.app';
-    
-    // Create a new WebSocket connection
-    const socket = new WebSocket(WSS_URL);
+    <script>
+        Pusher.logToConsole = true;
 
-    // Event: Connection Opened
-    socket.addEventListener('open', () => {
-      console.log('Connected to the WebSocket server.');
+        const pusher = new Pusher(
+            "7f1b0d0b8bdf56cb8690", 
+            {
+                cluster: "us2", 
+            }
+        );
 
-      // Send a message to the server
-      socket.send(JSON.stringify({ type: 'greeting', message: 'Hello, Server!' }));
-    });
+        const channel = pusher.subscribe("cache-respite-position-channel");
+        channel.bind("location-update", (data) => {
+            if (data) {
+                const isoString = data.message.time_utc.replace(" +0000 UTC", "Z");
+                const date = new Date(isoString);
+                localStorage.setItem('latitude', data.message.latitude)
+                localStorage.setItem('longitude', data.message.longitude)
+                marker.setRotationAngle(data.message.cog + iconRotationOffset)
+                marker.setLatLng([data.message.latitude, data.message.longitude])
+                marker.setPopupContent(`<b>${data.message.shipName}</b><br>${data.message.sog} kts<br>on ${date.toLocaleDateString()}<br>at ${date.toLocaleTimeString()}<br>Lat: ${data.message.latitude}<br>Lon: ${data.message.longitude}`).openPopup();
+                map.setView([data.message.latitude, data.message.longitude], 10)
+            }
+        });
+        channel.bind("cache-miss", () => {
+            localStorage.setItem('latitude', '')
+            localStorage.setItem('longitude', '')
+        })
 
-    // Event: Message Received
-    socket.addEventListener('message', (event) => {
-      console.log('Message from server: ' + event.data);
-
-      // Example: Sending a reply if a "ping" message is received
-      if (event.data.includes('ping')) {
-        socket.send(JSON.stringify({ type: 'pong', message: 'Pong!' }));
-      }
-    });
-
-    // Event: Error Occurred
-    socket.addEventListener('error', (event) => {
-      console.log('WebSocket error occurred: ' + event.message);
-    });
-
-    // Event: Connection Closed
-    socket.addEventListener('close', (event) => {
-      console.log(`WebSocket connection closed (Code: ${event.code}, Reason: ${event.reason})`);
-    });
-  </script>
+    </script>
 
 </body>
 
