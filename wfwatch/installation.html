@@ -70,23 +70,21 @@
                     <h1><img style="vertical-align: middle" src="images/logo-256.png" width="100" height="100">
                         Installation</h1>
                 </header>
-                <h3>NOTE: This is a Watch Only app - it is unlike other iPhone/Watch apps you've installed before.</h3>
-                <p>You can install the app from your watch or from your iPhone.</p>
             <div>
-                <button data-toggle="tab" data-tabs=".tabs.tabContainer" data-tab=".tab-1" class="btn btn-info" >From Your Watch</button>
-<!--                <button data-toggle="tab" data-tabs=".tabs.tabContainer" data-tab=".tab-2" class="btn btn-info" >From Your iPhone</button>-->
-                <button data-toggle="tab" data-tabs=".tabs.tabContainer" data-tab=".tab-3" class="btn btn-info" >Remove and Reinstall</button>
+                <button onclick='window.location.href="#fromWatch";'>From Your Watch</button>
+                <button onclick='window.location.href="#randr";'>Remove and Reinstall</button>
             </div>
             <br>
-                <div class="tabs tabContainer" >
-                    <div class="tab tab-1">
+                <div>
+                    <div>
+                        <h3 id="fromWatch">Install from your Watch</h3>
 
                 <p>
-                    Follow these steps to install the app <strong>from your watch</strong>
+                    Follow these steps to install the app <em>from your watch</em>
                 </p>
 
                 <ol>
-                    <li>Find the link in a message or e-mail on your watch</li>
+                    <li>Find the link in a message or e-mail <em>on your watch</em></li>
                     <li>The provided link will open the product page on the App Store</li>
                     <ul>
                         <li>The product is hidden/not discoverable on the App Store</li>
@@ -98,31 +96,9 @@
                         provided</a></li>
                 </ol>
                     </div>
-                    <div class="tab tab-2">
-                <p>
-                    Follow these steps to install the app <strong>from your iPhone</strong>
-                </p>
-
-                <ol>
-                    <li>Find the link in a message or e-mail on your iPhone</li>
-                    <li>The provided link will open the product page on the App Store</li>
-                    <ul>
-                        <li>The product is hidden/not discoverable on the App Store</li>
-                        <li>Do not share the provided link with anyone else</li>
-                    </ul>
-                    <li>Follow the prompts to aquire and download the app</li>
-                    <ul>
-                        <li><strong>The app will not show up in the list of iPhone apps</strong></li>
-                        <li>This is what makes it different from other apps</li>
-                        <li>The app is now installed on your watch</li>
-                    </ul>
-                    <li>On your watch, tap the crown (scroll wheel) one time</li>
-                    <li>Find the app icon that looks like a yellow arrow and tap it <img src="images/logo-256.png" width="20" height="20"> </li>
-                    <li>When the app launches, follow the <a href="instructions.html">"First Launch" instructions
-                        provided</a></li>
-                </ol>
-                    </div>
-                    <div class="tab tab-3">
+                    <hr>
+                    <h3 id="randr">Remove and Reinstall</h3>
+                    <div>
                 <p>
                     Follow these steps to <strong>remove and reinstall</strong> the app<br>
                     <em>You will not lose any data by doing this. You will have to log in again.</em>
