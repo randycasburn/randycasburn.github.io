@@ -854,3 +854,7 @@ body.is-loading section {
 body.is-ie #wrapper {
     height: 100%;
 }
+
+strikeout-img {
+    z-index: 0;
+}
