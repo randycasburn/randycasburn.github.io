@@ -448,7 +448,7 @@ figcaption {
   .hero {
     background:
       linear-gradient(180deg, rgba(9, 34, 32, 0.91) 0%, rgba(9, 34, 32, 0.72) 100%),
-      url("assets/screenshots/watch/radar.png") right -44px top 74px / 360px auto no-repeat,
+      url("assets/screenshots/watch/spot.png") right -44px top 74px / 360px auto no-repeat,
       linear-gradient(135deg, #0d6b68 0%, #506f4d 52%, #d09b3d 100%);
   }
 
