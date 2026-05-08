@@ -858,3 +858,21 @@ body.is-ie #wrapper {
 strikeout-img {
     z-index: 0;
 }
+
+header p {
+    font-size: 0.7em;
+    margin: 0;
+}
+header ul.project-list {
+    font-size: 0.7em;
+    font-weight: 700;
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+}
+header ul.project-list li {
+    margin: 0.4em 0;
+    padding: 0.2em 0.5em;
+    border: rgba(0,0,0,0.2) solid 1px;
+    background-color: rgba(111, 204, 204, 0.5);
+}   
