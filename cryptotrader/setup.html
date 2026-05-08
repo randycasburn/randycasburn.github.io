@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting Up - CryptoTrader</title>
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <meta name="theme-color" content="#1ADBCF">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="icons/favicon-32x32.png" alt="CryptoTrader" class="logo-icon">
+                    <span class="logo-text">CryptoTrader</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="setup.html" class="active">Setting Up</a></li>
+                <li><a href="usage.html">How To Use</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="page-header">
+            <h1>Setting Up CryptoTrader</h1>
+            <p class="subtitle">A complete guide to configuring your trading profile and getting started</p>
+        </section>
+
+        <section class="settings-guide">
+            <h2>Available Settings</h2>
+            
+            <div class="settings-section">
+                <h3>🪙 Coin Selection</h3>
+                <div class="setting-item">
+                    <p><strong>Coins to Trade:</strong> Select which cryptocurrencies you want the neural network to trade. Common choices include Bitcoin (BTC), Ethereum (ETH), Solana (SOL), Dogecoin (DOGE), and others.</p>
+                    <p class="tip">💡 Tip: Start with 1-2 coins to understand the system before expanding.</p>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>🎯 Trading Parameters</h3>
+                <div class="setting-item">
+                    <p><strong>Profit Margin (Long & Short):</strong> The percentage gain you want to target before closing a winning position. For example, setting this to 2% means trades will close once profits reach 2%.</p>
+                </div>
+                <div class="setting-item">
+                    <p><strong>Futures Long/Short On/Off:</strong> Toggle whether you want to trade using margin/leveraged positions. When on, the system can short-sell coins (profit from price drops).</p>
+                </div>
+                <div class="setting-item">
+                    <p><strong>DCA Signals:</strong> Dollar Cost Averaging signals indicate when to accumulate more of a coin at lower prices. Configure the threshold at which DCA signals are generated.</p>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>🔐 Robinhood API Credentials</h3>
+                <div class="setting-item">
+                    <p><strong>API Key & Secret:</strong> Required to connect to Robinhood for live trading. In the app, you'll generate a keypair and provide these credentials securely.</p>
+                    <p class="warning">⚠️ Warning: Never share your API credentials. They grant access to your Robinhood account.</p>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>🧠 Neural Network Timeframes</h3>
+                <div class="setting-item">
+                    <p><strong>Model Timeframes:</strong> The system trains separate neural networks for different time scales:</p>
+                    <ul>
+                        <li><strong>1 Hour:</strong> Quick reactions to short-term price movements</li>
+                        <li><strong>2 Hour:</strong> Early detection of developing trends</li>
+                        <li><strong>4 Hour:</strong> Medium-term trend following</li>
+                        <li><strong>8 Hour & 12 Hour:</strong> Longer-term trend signals</li>
+                        <li><strong>1 Day:</strong> Daily market direction</li>
+                        <li><strong>1 Week:</strong> Weekly trend confirmation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>📈 Mode Selection</h3>
+                <div class="setting-item">
+                    <p><strong>Simulation vs Live:</strong> Choose between:</p>
+                    <ul>
+                        <li><strong>Simulation Mode:</strong> Paper trading that doesn't execute real trades. Perfect for testing strategies.</li>
+                        <li><strong>Live Mode:</strong> Executes real trades on your Robinhood account. Only use after successful testing.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="getting-started">
+            <h2>Getting Started: Step-by-Step</h2>
+            
+            <div class="step-guide">
+                <div class="step-box">
+                    <div class="step-circle">1</div>
+                    <div class="step-content">
+                        <h3>Install and Launch CryptoTrader</h3>
+                        <p>Download and install CryptoTrader for your operating system (macOS, Windows, or Linux). Launch the application.</p>
+                    </div>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-circle">2</div>
+                    <div class="step-content">
+                        <h3>Configure Basic Settings</h3>
+                        <p>Open the Settings dialog (gear icon or menu). Start by:</p>
+                        <ul>
+                            <li>Selecting 1-2 coins to trade</li>
+                            <li>Setting profit targets (2-5% is typical)</li>
+                            <li>Enabling/disabling futures trading based on your preference</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-circle">3</div>
+                    <div class="step-content">
+                        <h3>Start in Simulation Mode</h3>
+                        <p>Set the app to Simulation Mode. This runs the full trading logic without using real money, letting you observe how the system performs.</p>
+                    </div>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-circle">4</div>
+                    <div class="step-content">
+                        <h3>Train the Neural Models</h3>
+                        <p>Click the "Trainer" button or select Training from the menu. The system will:</p>
+                        <ul>
+                            <li>Download historical price data for your selected coins</li>
+                            <li>Build neural network models for each timeframe</li>
+                            <li>Generate trading signals based on historical patterns</li>
+                        </ul>
+                        <p class="note">📌 Note: Training takes time (minutes to hours) depending on data volume.</p>
+                    </div>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-circle">5</div>
+                    <div class="step-content">
+                        <h3>Review Training Results</h3>
+                        <p>Once training completes, check the Dashboard panel:</p>
+                        <ul>
+                            <li>Neural Status panel shows model training completion</li>
+                            <li>Trading Signals panel displays generated long/short signals</li>
+                            <li>PnL chart shows simulated profit/loss performance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-circle">6</div>
+                    <div class="step-content">
+                        <h3>Run Simulation Mode</h3>
+                        <p>Once training is complete, click the <strong>Run All</strong> button (top right). The system will:</p>
+                        <ul>
+                            <li>Start the neural runner (executes signal generation)</li>
+                            <li>Start the simulated trader (simulates buying/selling)</li>
+                            <li>Display live trading activity in the dashboard</li>
+                        </ul>
+                        <p class="tip">💡 Tip: Run simulation for several hours or days to see pattern.</p>
+                    </div>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-circle">7</div>
+                    <div class="step-content">
+                        <h3>(Optional) Set Up Robinhood Credentials</h3>
+                        <p>When ready for live trading, add Robinhood credentials:</p>
+                        <ul>
+                            <li>Go to Settings</li>
+                            <li>Click "Generate Keypair" to create Ed25519 keys</li>
+                            <li>Use the public key in Robinhood's API setup</li>
+                            <li>Paste the private key into CryptoTrader and save</li>
+                        </ul>
+                        <p class="warning">⚠️ Keep credentials secure and never share them.</p>
+                    </div>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-circle">8</div>
+                    <div class="step-content">
+                        <h3>Switch to Live Mode (When Ready)</h3>
+                        <p>Once confident in your simulation results:</p>
+                        <ul>
+                            <li>Stop the current simulation (Stop All button)</li>
+                            <li>Change Mode to "Live"</li>
+                            <li>Click Run All to start live trading</li>
+                        </ul>
+                        <p class="warning">⚠️ Important: Start with small position sizes. Monitor closely for the first trades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tips">
+            <h2>Best Practices</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>✓ Do:</h3>
+                    <ul>
+                        <li>Start with simulation mode</li>
+                        <li>Train regularly as market conditions change</li>
+                        <li>Monitor the dashboard regularly</li>
+                        <li>Keep modest profit targets (2-5%)</li>
+                        <li>Start with small live position sizes</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h3>✗ Don't:</h3>
+                    <ul>
+                        <li>Trade with money you can't afford to lose</li>
+                        <li>Use unrealistic profit targets (&gt;50%)</li>
+                        <li>Ignore the dashboard during live trading</li>
+                        <li>Trade the most volatile coins initially</li>
+                        <li>Skip the simulation phase</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="next-steps">
+            <h2>Next: How To Use</h2>
+            <p>Once you've configured your settings and trained your models, head to the "How To Use" page to learn how to navigate the app's interface and understand what each panel shows.</p>
+            <a href="usage.html" class="nav-button">Go to How To Use →</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 CryptoTrader. For informational purposes. Always understand the risks of trading.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

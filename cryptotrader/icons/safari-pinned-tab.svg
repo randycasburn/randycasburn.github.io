@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="CryptoTrader">
+  <path d="M91 100c0-24 19-43 43-43h244c24 0 43 19 43 43v312c0 24-19 43-43 43H134c-24 0-43-19-43-43V100z"/>
+  <path fill="#fff" d="M164 284h44v88h-44v-88zm70-132h44v220h-44V152zm70 64h44v156h-44V216z"/>
+  <path fill="#fff" d="M176 244h20v168h-20V244zm70-52h20v220h-20V192zm70-44h20v264h-20V148z"/>
+  <circle fill="#fff" cx="352" cy="160" r="58"/>
+</svg>
