@@ -863,3 +863,8 @@ body {
         padding: 6px 8px;
     }
 }
+
+footer a {
+    color: var(--primary-cyan);
+    text-decoration: none;
+}
