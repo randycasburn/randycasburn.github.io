@@ -2291,7 +2291,7 @@ body > aside.popover {
   position: absolute;
   z-index: 1;
   width: 50vw;
-  height: 50vh;
+  height: 60vh;
   min-height: 450px;
   left: 25vw;
   top: 25vh;
