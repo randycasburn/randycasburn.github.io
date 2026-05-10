@@ -6,32 +6,62 @@
 
 (function($) {
 
-	var	$window = $(window),
+	var $window = $(window),
 		$head = $('head'),
 		$body = $('body');
 
 	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ '361px',   '480px'  ],
-			xxsmall:  [ null,      '360px'  ],
-			'xlarge-to-max':    '(min-width: 1681px)',
-			'small-to-xlarge':  '(min-width: 481px) and (max-width: 1680px)'
-		});
+	breakpoints({
+		xlarge: ['1281px', '1680px'],
+		large: ['981px', '1280px'],
+		medium: ['737px', '980px'],
+		small: ['481px', '736px'],
+		xsmall: ['361px', '480px'],
+		xxsmall: [null, '360px'],
+		'xlarge-to-max': '(min-width: 1681px)',
+		'small-to-xlarge': '(min-width: 481px) and (max-width: 1680px)'
+	});
 
 	// Stops animations/transitions until the page has ...
 
-		// ... loaded.
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-preload');
-				}, 100);
-			});
+	// ... loaded.
+	$window.on('load', function () {
+		window.setTimeout(function () {
+			$body.removeClass('is-preload');
+		}, 100);
+	});
 
-		// ... stopped resizing.
+	function daysSince(dateString) {
+		const saved = new Date(dateString);
+		const today = new Date();
+
+		saved.setHours(0,0,0,0);
+		today.setHours(0,0,0,0);
+
+		const diffMs = today - saved;
+
+		return Math.floor(diffMs / (1000 * 60 * 60 * 24));
+	}
+
+	$window.on('load', function () {
+		var lastSeen = localStorage.getItem('lastSeen')
+		if (lastSeen != null && daysSince(lastSeen) <= 3) {
+			$('.popover').hide()
+		} else {
+			$('.popover').show()
+		}
+	});
+	$('.inner h2:first-child').on('click', ()=>{
+		$('.popover').show()
+	});
+
+	$('#dismiss-popover').on('click', ()=>{
+		localStorage.setItem('lastSeen', new Date().toISOString())
+		$('.popover').hide()
+	})
+
+
+	// ... stopped resizing.
 			var resizeTimeout;
 
 			$window.on('resize', function() {
