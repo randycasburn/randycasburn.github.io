@@ -23,7 +23,6 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: .75em;
 }
 
 body {
@@ -709,4 +708,8 @@ h3 {
   .flow-card {
     padding: 14px;
   }
+}
+
+.support ul li {
+  padding: 10px;
 }
