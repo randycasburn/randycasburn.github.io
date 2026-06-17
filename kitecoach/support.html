@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Kite Coach gives beginner kiteboarders instructor-style troubleshooting for relaunch, water starts, first rides, transitions, upwind riding, and self rescue."
+      content="Contact Kite Coach support for help with beginner kiteboarding troubleshooting, feedback, and app questions."
     />
-    <title>Kite Coach | Beginner Kiteboarding Troubleshooting</title>
+    <title>Kite Coach | Support</title>
     <link rel="icon" href="./assets/icon-192.png" />
     <link rel="apple-touch-icon" href="./assets/icon-180.png" />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="https://support.randycasburn.com/support-form.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -28,27 +29,18 @@
       </nav>
     </header>
 
-  <main id="top">
-      <section id="features" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">This app is safe</p>
-        <h2>Privacy Policy</h2>
-      </div>
-      <div class="feature-grid">
-        <article>
-          <h4>This app collects no data other than your username and password. Those are necessary to access the
-            data the app displays.</h4>
-
-          <h4>This app does not distribute or collect anything personal about you.</h4>
-        </article>
-      </div>
-    </section>
-</main>
+    <main id="top">
+      <section class="section support" id="support" aria-labelledby="support-title">
+        <div  style="text-align: center; width: 100%">
+          <h2 id="support-title">Send a support request</h2>
+        </div>
+      <app-support-form project="kitecoach"></app-support-form>
+      </section>
+    </main>
 
     <footer class="site-footer">
       <span>© 2026 Randy Casburn</span>
       <a href="#top">Back to top</a>
     </footer>
-
   </body>
 </html>
