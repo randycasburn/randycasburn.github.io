@@ -42,7 +42,7 @@
             <a class="button button-secondary" href="#features">See features</a>
           </div>
           <div class="store-buttons hero-actions" aria-label="App store links">
-            <a class="store-button" href="#" aria-label="Download Kite Coach on the App Store">
+            <a class="store-button" href="https://apps.apple.com/us/app/kite-coach/id6780690915" aria-label="Download Kite Coach on the App Store">
               <span class="store-icon apple-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" role="img">
                   <path d="M16.7 12.7c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.6-1.3-.1-2.5.8-3.1.8-.7 0-1.6-.8-2.7-.7-1.4 0-2.7.8-3.4 2.1-1.5 2.5-.4 6.3 1.1 8.4.7 1 1.6 2.2 2.7 2.1 1.1 0 1.5-.7 2.8-.7 1.3 0 1.7.7 2.8.7 1.2 0 1.9-1 2.6-2.1.8-1.2 1.2-2.4 1.2-2.4 0-.1-2.7-1.1-2.8-3.4ZM14.7 6.5c.6-.7 1-1.8.9-2.8-.9 0-2 .6-2.6 1.3-.6.7-1.1 1.7-.9 2.7 1 .1 2-.5 2.6-1.2Z" />
@@ -53,7 +53,7 @@
                 <strong>App Store</strong>
               </span>
             </a>
-            <a class="store-button" href="#" aria-label="Get Kite Coach on Google Play">
+            <button class="store-button store-button-android" type="button" popovertarget="android-availability" aria-label="Get Kite Coach on Google Play availability">
               <span class="store-icon play-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" role="img">
                   <path d="M4.6 3.5c-.4.2-.6.7-.6 1.3v14.4c0 .6.2 1 .6 1.3l8.3-8.5L4.6 3.5Z" />
@@ -66,7 +66,10 @@
                 <small>Get it on</small>
                 <strong>Google Play</strong>
               </span>
-            </a>
+            </button>
+            <div class="store-popover" id="android-availability" popover>
+              Android version will be available approx. July 4th
+            </div>
           </div>
         </div>
 
