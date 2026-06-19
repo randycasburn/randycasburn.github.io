@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="WindWise is an AI-powered wind sport decision assistant that answers one question: Can I Ride?"
+    />
+    <title>WindWise | Can I Ride?</title>
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="WindWise home">
+        <span class="brand-mark">
+          <img src="assets/icon.svg" alt="" aria-hidden="true" />
+        </span>
+        <span>WindWise</span>
+      </a>
+      <nav>
+        <a href="#decision">Decision</a>
+        <a href="#trust">Trust</a>
+        <a href="#knowledge">Knowledge</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <picture>
+          <img
+            src="assets/hero-windwise.png"
+            alt="A wind sport rider preparing beside wind-textured coastal water"
+          />
+        </picture>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">AI-powered wind sport decision assistant</p>
+          <h1 id="hero-title">WindWise</h1>
+          <p class="hero-question">Can I Ride? Let WindWise Decide.</p>
+          <p class="hero-copy">
+            Stop translating weather charts into guesswork. WindWise turns rider,
+            spot, and weather knowledge into a clear GO / WAIT / SKIP
+            recommendation for today.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#decision">See the decision</a>
+            <a class="button secondary" href="#trust">Why riders trust it</a>
+          </div>
+        </div>
+        <aside class="decision-panel" aria-label="Example WindWise decision">
+          <div class="decision-topline">
+            <span>Today</span>
+            <strong>GO</strong>
+          </div>
+          <div class="score-row">
+            <span class="score">86</span>
+            <div>
+              <span class="score-label">WindWise Score</span>
+              <strong>Great</strong>
+            </div>
+          </div>
+          <dl>
+            <div>
+              <dt>Decision Confidence</dt>
+              <dd>91%</dd>
+            </div>
+            <div>
+              <dt>Best Today's Opportunity</dt>
+              <dd>3:15 PM - 5:45 PM</dd>
+            </div>
+            <div>
+              <dt>Expected at Your Spot</dt>
+              <dd>17-22 mph SSW</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="intro-band" aria-label="Product promise">
+        <div class="section-inner intro-grid">
+          <p>
+            WindWise is not a weather app. It is built for riders who want a
+            recommendation, the confidence behind it, and the supporting evidence
+            only when they need it.
+          </p>
+          <div class="decision-pill-group" aria-label="WindWise decisions">
+            <span>GO</span>
+            <span>WAIT</span>
+            <span>SKIP</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="decision" aria-labelledby="decision-title">
+        <div class="section-inner split">
+          <div>
+            <p class="eyebrow">The decision comes first</p>
+            <h2 id="decision-title">One question. One answer. No forecast maze.</h2>
+          </div>
+          <div class="copy-stack">
+            <p>
+              Traditional wind tools show observations, model output, graphs,
+              and tables, then leave the rider to make the call.
+            </p>
+            <p>
+              WindWise does the synthesis. It evaluates today's opportunities,
+              scores expected session quality, and presents the best Ride Window
+              in plain language.
+            </p>
+          </div>
+        </div>
+        <div class="section-inner feature-grid">
+          <article>
+            <span class="feature-icon">01</span>
+            <h3>WindWise Score</h3>
+            <p>
+              A rider-specific 0-100 score for expected session quality, not raw
+              wind speed.
+            </p>
+          </article>
+          <article>
+            <span class="feature-icon">02</span>
+            <h3>Decision Confidence</h3>
+            <p>
+              Confidence in the recommendation itself, separated from weather
+              certainty.
+            </p>
+          </article>
+          <article>
+            <span class="feature-icon">03</span>
+            <h3>Best Today's Opportunity</h3>
+            <p>
+              The clearest Ride Window for the day, with expected conditions and
+              risk notes.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section trust-section" id="trust" aria-labelledby="trust-title">
+        <div class="section-inner split">
+          <div>
+            <p class="eyebrow">Trust is the product</p>
+            <h2 id="trust-title">Every recommendation can show its work.</h2>
+          </div>
+          <div class="copy-stack">
+            <p>
+              WindWise earns trust through accuracy, transparency, consistency,
+              continuous learning, and honest communication.
+            </p>
+            <p>
+              Estimates are labeled as estimates. Measured observations remain
+              distinct. AI helps explain the decision, while the recommendation
+              stays reproducible and explainable.
+            </p>
+          </div>
+        </div>
+        <div class="section-inner trust-list">
+          <div>
+            <strong>Expected at Your Spot</strong>
+            <span>Conditions estimated for the launch, not a single station reading.</span>
+          </div>
+          <div>
+            <strong>How WindWise Calculated Your Score</strong>
+            <span>Wind fit, consistency, direction quality, timing, daylight, and risk.</span>
+          </div>
+          <div>
+            <strong>Detailed Wind Timeline</strong>
+            <span>Supporting evidence when a rider wants more context.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="knowledge" aria-labelledby="knowledge-title">
+        <div class="section-inner centered">
+          <p class="eyebrow">Knowledge-centric, not data-centric</p>
+          <h2 id="knowledge-title">WindWise understands the rider, the sport, and the spot.</h2>
+          <p>
+            Identical weather can produce different recommendations for different
+            riders. WindWise combines Sport Knowledge, Rider Knowledge, Spot
+            Knowledge, and Weather Knowledge to make a recommendation that fits
+            the session, not just the forecast.
+          </p>
+        </div>
+        <div class="section-inner knowledge-grid">
+          <article>
+            <h3>Rider Knowledge</h3>
+            <p>Skill, goals, equipment, preferences, risk tolerance, and personal comfort.</p>
+          </article>
+          <article>
+            <h3>Sport Knowledge</h3>
+            <p>Wind ranges, gust tolerance, water state, session duration, and comfort thresholds.</p>
+          </article>
+          <article>
+            <h3>Spot Knowledge</h3>
+            <p>Preferred directions, launch behavior, local effects, sensor trust, and shared history.</p>
+          </article>
+          <article>
+            <h3>Weather Knowledge</h3>
+            <p>Current conditions, model trends, storm signals, daylight, and changing context.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="quote-band" aria-label="WindWise positioning">
+        <div class="section-inner">
+          <blockquote>
+            The weather is only an input. The output is a decision.
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="section final-section" aria-labelledby="final-title">
+        <div class="section-inner final-grid">
+          <div>
+            <p class="eyebrow">Built for the session</p>
+            <h2 id="final-title">Save your time, fuel, and attention for the right Ride Window.</h2>
+          </div>
+          <p>
+            WindWise gives riders a simple first answer and a transparent path to
+            deeper evidence. Open it, see the decision, understand why, and get
+            moving when the opportunity is real.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="section-inner footer-inner">
+        <span>
+          &copy; Randy Casburn. All rights reserved.
+        </span>
+        <span><strong>WindWise</strong></span>
+        <span>Can I Ride? Let WindWise Decide.</span>
+      </div>
+    </footer>
+  </body>
+</html>

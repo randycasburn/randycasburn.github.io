@@ -1,0 +1,24 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Deep Navy Background -->
+  <rect width="200" height="200" rx="40" fill="#0A2540"/>
+  
+  <!-- Wind Flow Lines -->
+  <!-- Line 1 (Top) -->
+  <path d="M40 65 Q70 45 95 68 Q125 88 155 55" 
+        stroke="#00E5FF" stroke-width="18" stroke-linecap="round" opacity="0.95"/>
+  
+  <!-- Line 2 (Middle) -->
+  <path d="M35 95 Q68 78 100 98 Q130 118 160 85" 
+        stroke="#00E5FF" stroke-width="16" stroke-linecap="round" opacity="0.9"/>
+  
+  <!-- Line 3 (Bottom) -->
+  <path d="M38 125 Q72 110 98 128 Q127 148 158 118" 
+        stroke="#00E5FF" stroke-width="14" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- Subtle Wisdom Glow / Insight Point -->
+  <!-- Outer soft glow -->
+  <circle cx="100" cy="98" r="18" fill="#FFD700" opacity="0.25"/>
+  <!-- Inner bright point -->
+  <circle cx="100" cy="98" r="8" fill="#FFEA80"/>
+  <circle cx="100" cy="98" r="4" fill="#FFFFFF"/>
+</svg>

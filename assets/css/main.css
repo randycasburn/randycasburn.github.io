@@ -512,8 +512,13 @@ ul.icons {
 }
 
 ul.icons li {
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 0.675em 0.5em;
+    position: relative;
+    vertical-align: middle;
 }
 
 ul.icons li a {
@@ -563,6 +568,102 @@ ul.icons li a:before {
 
 ul.icons li a:hover {
     border-color: #ff7496;
+}
+
+/* Place image icons centered inside the circular anchor */
+ul.icons li img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    max-width: 44px;
+    max-height: 44px;
+    border-radius: 100%;
+    z-index: 2;
+    pointer-events: none;
+    display: block;
+}
+
+/* Label beneath icon image */
+.icon-label {
+    display: block;
+    margin-top: 0.6em;
+    font-size: 0.85em;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 1.2;
+    color: inherit;
+    width: 6.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Popover for windwise link */
+.popover {
+    position: absolute;
+    bottom: calc(100% + 0.6em);
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    min-width: 12em;
+    max-width: 18em;
+    padding: 0.6em 0.9em;
+    background: rgba(17,17,17,0.95);
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    font-size: 0.95em;
+    text-align: center;
+    z-index: 30;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.popover:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px 8px 0 8px;
+    border-style: solid;
+    border-color: rgba(17,17,17,0.95) transparent transparent transparent;
+}
+
+.popover.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.popover .popover-text {
+    margin-bottom: 0.5em;
+}
+
+.popover .popover-action {
+    display: inline;
+    padding: 0.35em 0.6em;
+    background: transparent;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.popover .popover-action:hover,
+.popover .popover-action:focus {
+    background: #dedede;
+    color: #000;
+}
+
+/* If an <img> is present before the anchor, hide the FontAwesome pseudo-icon for that anchor */
+ul.icons li img + a:before {
+    content: none;
 }
 
 @media screen and (max-width: 480px) {
