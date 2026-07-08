@@ -91,19 +91,75 @@ a {
 }
 
 .hero {
-  min-height: 86vh;
+  position: relative;
+  overflow: hidden;
+  min-height: 72vh;
   display: grid;
   align-items: end;
-  padding: clamp(92px, 12vw, 142px) clamp(22px, 5vw, 72px) clamp(76px, 9vw, 112px);
+  padding: clamp(52px, 7vw, 86px) clamp(22px, 5vw, 72px) clamp(32px, 5vw, 54px);
   color: white;
   background:
-    linear-gradient(90deg, rgba(9, 34, 32, 0.92) 0%, rgba(9, 34, 32, 0.74) 42%, rgba(9, 34, 32, 0.22) 100%),
-    url("assets/screenshots/watch/spot.png") right 52% center / min(58vw, 620px) auto no-repeat,
+    linear-gradient(90deg, rgba(9, 34, 32, 0.94) 0%, rgba(9, 34, 32, 0.8) 42%, rgba(9, 34, 32, 0.3) 100%),
     linear-gradient(135deg, #0d6b68 0%, #506f4d 52%, #d09b3d 100%);
 }
 
 .hero-copy {
+  position: relative;
+  z-index: 2;
   width: min(760px, 100%);
+}
+
+.hero-device-stage {
+  position: absolute;
+  inset: 86px clamp(22px, 6vw, 88px) 52px auto;
+  width: min(49vw, 610px);
+  pointer-events: none;
+}
+
+.hero-device {
+  position: absolute;
+  width: min(30vw, 340px);
+  max-height: 70vh;
+  object-fit: contain;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 22px;
+  background: #101615;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+  transition: transform 180ms ease, z-index 180ms ease;
+}
+
+.hero-device-apple {
+  right: min(16vw, 180px);
+  top: 16px;
+  z-index: 2;
+  transform: rotate(-5deg);
+}
+
+.hero-device-android {
+  right: 0;
+  top: 92px;
+  z-index: 1;
+  transform: rotate(6deg);
+}
+
+body[data-platform="android"] .hero-device-apple {
+  z-index: 1;
+  transform: rotate(-5deg) translateX(-14px) scale(0.94);
+}
+
+body[data-platform="android"] .hero-device-android {
+  z-index: 2;
+  transform: rotate(6deg) translateX(-10px) scale(1.04);
+}
+
+body[data-platform="apple"] .hero-device-apple {
+  z-index: 2;
+  transform: rotate(-5deg) scale(1.04);
+}
+
+body[data-platform="apple"] .hero-device-android {
+  z-index: 1;
+  transform: rotate(6deg) translateX(10px) scale(0.94);
 }
 
 .eyebrow {
@@ -133,6 +189,11 @@ h1 {
   letter-spacing: 0;
 }
 
+.hero h1 {
+  margin-bottom: 10px;
+  font-size: clamp(4rem, 11vw, 7.1rem);
+}
+
 h2 {
   max-width: 860px;
   margin-bottom: 18px;
@@ -150,7 +211,7 @@ h3 {
 
 .lede {
   max-width: 660px;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   color: rgba(255, 255, 255, 0.86);
   font-size: clamp(1.12rem, 2.2vw, 1.55rem);
   line-height: 1.42;
@@ -161,11 +222,16 @@ h3 {
   gap: 12px;
 }
 
-.hero-actions a {
+.hero-actions a,
+.platform-switcher button,
+.play-store-badge {
   min-height: 46px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero-actions a {
   padding: 10px 18px;
   border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 8px;
@@ -178,6 +244,110 @@ h3 {
   background: var(--sun);
   color: #1f2414;
   border-color: var(--sun);
+}
+
+.platform-switcher {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  margin: 0 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.platform-switcher button {
+  min-width: 96px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.82);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.platform-switcher button[aria-pressed="true"] {
+  background: var(--sun);
+  color: #1f2414;
+}
+
+.store-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.app-store-badge {
+  width: 170px;
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  background: none;
+  text-decoration: none;
+}
+
+.app-store-badge img {
+  width: 170px;
+  height: 70px;
+}
+
+.store-popover-wrap {
+  position: relative;
+}
+
+.play-store-badge {
+  gap: 11px;
+  min-width: 170px;
+  min-height: 52px;
+  padding: 7px 14px 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  background: #0b0b0b;
+  color: white;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 750;
+  line-height: 1.05;
+  text-align: left;
+  cursor: pointer;
+}
+
+.play-store-badge small {
+  display: block;
+  margin-bottom: 2px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.63rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.play-store-icon {
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-left: 22px solid #57c4a4;
+  filter: drop-shadow(8px 0 0 #f2c14e) drop-shadow(14px 0 0 #dc6f5f);
+}
+
+.store-popover {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 10px);
+  z-index: 5;
+  width: min(280px, calc(100vw - 44px));
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  background: rgba(9, 34, 32, 0.96);
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 54px rgba(0, 0, 0, 0.32);
+  font-size: 0.94rem;
+  line-height: 1.4;
 }
 
 .intro-band {
@@ -274,8 +444,12 @@ article p,
 }
 
 .flow-diagram {
-  --flow-aspect-ratio: 8 / 3;
+  --flow-aspect-ratio: 4 / 3;
   width: min(100%, 1280px);
+}
+
+body[data-platform="android"] .flow-diagram {
+  --flow-aspect-ratio: 23 / 15;
 }
 
 .flow-diagram img {
@@ -413,11 +587,35 @@ figure img {
   object-fit: cover;
 }
 
+body[data-platform="android"] .iphone-row figure img,
+body[data-platform="android"] .settings-grid figure:nth-child(2) img {
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+}
+
 figcaption {
   margin-top: 10px;
   color: var(--muted);
   font-size: 0.88rem;
   font-weight: 700;
+}
+
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  color: var(--sea-dark);
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(23, 32, 29, 0.06);
+}
+
+.download-link:hover {
+  border-color: rgba(13, 107, 104, 0.36);
+  color: var(--sea);
 }
 
 .model-section {
@@ -472,8 +670,26 @@ figcaption {
   .hero {
     background:
       linear-gradient(180deg, rgba(9, 34, 32, 0.91) 0%, rgba(9, 34, 32, 0.72) 100%),
-      url("assets/screenshots/watch/spot.png") right -44px top 74px / 360px auto no-repeat,
       linear-gradient(135deg, #0d6b68 0%, #506f4d 52%, #d09b3d 100%);
+  }
+
+  .hero-device-stage {
+    inset: 78px 18px auto auto;
+    width: 340px;
+    height: 380px;
+    opacity: 0.52;
+  }
+
+  .hero-device {
+    width: 190px;
+  }
+
+  .hero-device-apple {
+    right: 112px;
+  }
+
+  .hero-device-android {
+    right: 0;
   }
 
   .intro-band,
@@ -512,6 +728,40 @@ figcaption {
   .hero {
     min-height: 82vh;
     padding-top: 130px;
+  }
+
+  .hero-device-stage {
+    inset: 92px -92px auto auto;
+    width: 270px;
+    height: 330px;
+    opacity: 0.26;
+  }
+
+  .hero-device {
+    width: 158px;
+    border-radius: 18px;
+  }
+
+  .hero-device-apple {
+    right: 90px;
+  }
+
+  .hero-device-android {
+    right: 0;
+  }
+
+  .platform-switcher {
+    width: 100%;
+  }
+
+  .platform-switcher button {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .store-actions {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   h1 {

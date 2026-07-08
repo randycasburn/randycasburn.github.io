@@ -12,20 +12,21 @@
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="iWind is an Apple Watch and iPhone app for WeatherFlow, iKitesurf, iWindsurf, WindAlert, Sailflow, and FishWeather wind conditions, forecasts, radar, widgets, and workout tracking.">
+  <meta name="description" content="iWind is a watch and phone app for WeatherFlow, iKitesurf, iWindsurf, WindAlert, Sailflow, and FishWeather wind conditions, forecasts, radar, widgets, and session-ready wind decisions.">
   <title>iWind App</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="platform.js" defer></script>
  <script type="module" src="https://support.randycasburn.com/support-form.js" defer></script>
 </head>
-<body>
+<body data-platform="apple">
   <header class="site-header" aria-label="Main navigation">
     <a class="brand" href="#top" aria-label="iWind home">
       <img src="assets/icon.png" alt="" width="44" height="44">
       <span>iWind</span>
     </a>
     <nav aria-label="Page sections">
-      <a href="#watch">Watch</a>
-      <a href="#iphone">iPhone</a>
+      <a href="#watch" data-platform-text-apple="Watch" data-platform-text-android="Wear OS">Watch</a>
+      <a href="#iphone" data-platform-text-apple="iPhone" data-platform-text-android="Android">iPhone</a>
       <a href="#forecast">Forecasts</a>
       <a href="#settings">Settings</a>
       <a href="how-to.html">How To</a>
@@ -36,21 +37,38 @@
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-device-stage" aria-hidden="true">
+        <img class="hero-device hero-device-apple" src="assets/screenshots/watch/spot.png" alt="">
+        <img class="hero-device hero-device-android" src="assets/screenshots/wear/spot.png" alt="">
+      </div>
       <div class="hero-copy">
-        <p class="eyebrow">Apple Watch and iPhone wind intelligence</p>
+        <p class="eyebrow">Watch and phone wind intelligence</p>
         <h1 id="hero-title">iWind</h1>
-        <p class="lede">Live WeatherFlow network spots, favorite profiles, forecast models, radar, widgets, alerts, and water-session workout tools built for fast decisions before you rig.</p>
+        <p class="lede">Live WeatherFlow network spots, favorite profiles, forecast models, radar, widgets, alerts, and water-session tools built for fast decisions before you rig.</p>
+        <div class="platform-switcher" aria-label="Choose platform">
+          <button type="button" data-platform-option="apple" aria-pressed="true">Apple</button>
+          <button type="button" data-platform-option="android" aria-pressed="false">Android</button>
+        </div>
         <div class="hero-actions" aria-label="Primary sections">
           <a href="#features">Explore features</a>
           <a href="#screenshots">View screenshots</a>
+        </div>
+        <div class="store-actions" aria-label="App stores">
+          <a class="app-store-badge" href="https://apps.apple.com/us/app/iwind/id6763118161?itscg=30200&itsct=apps_box_badge&mttnsubad=6763118161">
+            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1778803200" width="170" height="70" alt="Download on the App Store">
+          </a>
+          <div class="store-popover-wrap">
+            <button class="play-store-badge" type="button" aria-expanded="false" aria-controls="android-approval-popover">
+              <span class="play-store-icon" aria-hidden="true"></span>
+              <span>
+                <small>Get it on</small>
+                Google Play
+              </span>
+            </button>
+            <div id="android-approval-popover" class="store-popover" role="status" hidden>
+              Android availability begins after the Google Play approval process is complete.
+            </div>
           </div>
-          <div class="hero-actions">
-
-    <a href="https://apps.apple.com/us/app/iwind/id6763118161?itscg=30200&itsct=apps_box_badge&mttnsubad=6763118161" style="width: 170px;border: none; background: none; inline-block; text-decoration: none;">
-    <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1778803200" style="width: 170px; height: 70px" alt="Download on the App Store" />
-      <a href="support.html#whereisandroid"> Where's Android?</a>
-    </a>
-    
         </div>
       </div>
     </section>
@@ -62,11 +80,11 @@
       </div>
       <div>
         <strong>3 day free trial</strong>
-        <span>Annual subscription access includes the watch app, iPhone companion, widgets, radar, charts, and profile management.</span>
+        <span>Annual subscription access includes the watch app, phone companion, widgets, radar, charts, and profile management.</span>
       </div>
       <div>
         <strong>Designed for the water</strong>
-        <span>Large wind readings, haptic thresholds, water lock support, and glanceable complications reduce the fiddling.</span>
+        <span data-platform-text-apple="Large wind readings, haptic thresholds, water lock support, and glanceable complications reduce the fiddling." data-platform-text-android="Large wind readings, haptic thresholds, glanceable tiles, and Wear OS-friendly screens reduce the fiddling.">Large wind readings, haptic thresholds, water lock support, and glanceable complications reduce the fiddling.</span>
       </div>
     </section>
 
@@ -89,7 +107,7 @@
         <article>
           <span class="feature-mark">03</span>
           <h3>Forecast model charts</h3>
-          <p>Compare model guidance such as HRRR, NAM 3k, Blend, and WeatherFlow-specific forecast data in compact hourly charts right on Apple Watch.</p>
+          <p data-platform-text-apple="Compare model guidance such as HRRR, NAM 3k, Blend, and WeatherFlow-specific forecast data in compact hourly charts right on Apple Watch." data-platform-text-android="Compare model guidance and WeatherFlow-specific forecast data in compact hourly charts right on Wear OS.">Compare model guidance such as HRRR, NAM 3k, Blend, and WeatherFlow-specific forecast data in compact hourly charts right on Apple Watch.</p>
         </article>
         <article>
           <span class="feature-mark">04</span>
@@ -98,22 +116,22 @@
         </article>
         <article>
           <span class="feature-mark">05</span>
-          <h3>Widgets and complications</h3>
-          <p>Keep the selected spot visible outside the app with WidgetKit complications for corner, circular, inline, and rectangular Apple Watch families.</p>
+          <h3 data-platform-text-apple="Widgets and complications" data-platform-text-android="Widgets and tiles">Widgets and complications</h3>
+          <p data-platform-text-apple="Keep the selected spot visible outside the app with WidgetKit complications for corner, circular, inline, and rectangular Apple Watch families." data-platform-text-android="Keep the selected spot visible outside the app with Android widgets and Wear OS surfaces built for quick checks.">Keep the selected spot visible outside the app with WidgetKit complications for corner, circular, inline, and rectangular Apple Watch families.</p>
         </article>
         <article>
           <span class="feature-mark">06</span>
-          <h3>Workout and water lock support</h3>
-          <p>Start a session from the watch, optionally enable water lock, and review a summary when the workout ends.</p>
+          <h3 data-platform-text-apple="Workout and water lock support" data-platform-text-android="Wear OS glanceability">Workout and water lock support</h3>
+          <p data-platform-text-apple="Start a session from the watch, optionally enable water lock, and review a summary when the workout ends." data-platform-text-android="Move between live wind, radar, forecast charts, profiles, and settings from compact watch screens built for outdoor checks.">Start a session from the watch, optionally enable water lock, and review a summary when the workout ends.</p>
         </article>
       </div>
     </section>
 
     <section id="watch" class="section split">
       <div class="section-copy">
-        <p class="eyebrow">Apple Watch</p>
+        <p class="eyebrow" data-platform-text-apple="Apple Watch" data-platform-text-android="Wear OS">Apple Watch</p>
         <h2>Fast reads when your phone is tucked away.</h2>
-        <p>iWind keeps the watch experience dense and direct: profiles, spot tabs, wind compass, forecast charts, radar, settings, alerts, and workout controls live where your thumb can reach them.</p>
+        <p data-platform-text-apple="iWind keeps the watch experience dense and direct: profiles, spot tabs, wind compass, forecast charts, radar, settings, alerts, and workout controls live where your thumb can reach them." data-platform-text-android="iWind keeps the watch experience dense and direct: profiles, spot tabs, wind compass, forecast charts, radar, settings, and alerts live where your thumb can reach them.">iWind keeps the watch experience dense and direct: profiles, spot tabs, wind compass, forecast charts, radar, settings, alerts, and workout controls live where your thumb can reach them.</p>
         <ul class="check-list">
           <li>Swipe through spots in the selected profile.</li>
           <li>Open charts for model-by-model forecast comparison.</li>
@@ -123,15 +141,15 @@
       </div>
       <div class="phone-row watch-row">
         <figure>
-          <img src="assets/screenshots/watch/spot.png" alt="Apple Watch spot wind detail screen">
+          <img src="assets/screenshots/watch/spot.png" alt="Apple Watch spot wind detail screen" data-platform-src-apple="assets/screenshots/watch/spot.png" data-platform-src-android="assets/screenshots/wear/spot.png" data-platform-alt-apple="Apple Watch spot wind detail screen" data-platform-alt-android="Wear OS spot wind detail screen">
           <figcaption>Spot detail</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/watch/radar.png" alt="Apple Watch radar screen">
+          <img src="assets/screenshots/watch/radar.png" alt="Apple Watch radar screen" data-platform-src-apple="assets/screenshots/watch/radar.png" data-platform-src-android="assets/screenshots/wear/radar.png" data-platform-alt-apple="Apple Watch radar screen" data-platform-alt-android="Wear OS radar screen">
           <figcaption>Radar</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/watch/hrrr.png" alt="Apple Watch HRRR forecast chart">
+          <img src="assets/screenshots/watch/hrrr.png" alt="Apple Watch HRRR forecast chart" data-platform-src-apple="assets/screenshots/watch/hrrr.png" data-platform-src-android="assets/screenshots/wear/hrrr.png" data-platform-alt-apple="Apple Watch HRRR forecast chart" data-platform-alt-android="Wear OS HRRR forecast chart">
           <figcaption>Forecast</figcaption>
         </figure>
       </div>
@@ -140,23 +158,23 @@
     <section id="iphone" class="section split reverse">
       <div class="phone-row iphone-row">
         <figure>
-          <img src="assets/screenshots/iphone/profiles.png" alt="iPhone profile management screen">
+          <img src="assets/screenshots/iphone/profiles.png" alt="iPhone profile management screen" data-platform-src-apple="assets/screenshots/iphone/profiles.png" data-platform-src-android="assets/screenshots/android/profiles.png" data-platform-alt-apple="iPhone profile management screen" data-platform-alt-android="Android profile management screen">
           <figcaption>Profiles</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/iphone/search_results.png" alt="iPhone spot search results screen">
+          <img src="assets/screenshots/iphone/search_results.png" alt="iPhone spot search results screen" data-platform-src-apple="assets/screenshots/iphone/search_results.png" data-platform-src-android="assets/screenshots/android/search_results.png" data-platform-alt-apple="iPhone spot search results screen" data-platform-alt-android="Android spot search results screen">
           <figcaption>Spot search</figcaption>
         </figure>
       </div>
       <div class="section-copy">
-        <p class="eyebrow">iPhone companion</p>
+        <p class="eyebrow" data-platform-text-apple="iPhone companion" data-platform-text-android="Android companion">iPhone companion</p>
         <h2>Manage the account work on the bigger screen.</h2>
-        <p>The iPhone app handles sign in, profile management, spot search, spot removal, and settings sync so the watch can stay focused on fast weather reads.</p>
+        <p data-platform-text-apple="The iPhone app handles sign in, profile management, spot search, spot removal, and settings sync so the watch can stay focused on fast weather reads." data-platform-text-android="The Android app handles sign in, profile management, spot search, spot removal, and settings sync so the watch can stay focused on fast weather reads.">The iPhone app handles sign in, profile management, spot search, spot removal, and settings sync so the watch can stay focused on fast weather reads.</p>
         <ul class="check-list">
           <li>Create, edit, and delete favorite profiles.</li>
           <li>Search for new spots and add one or many at a time.</li>
           <li>Remove spots from a profile when your routine changes.</li>
-          <li>Sync unit and display preferences back to Apple Watch.</li>
+          <li data-platform-text-apple="Sync unit and display preferences back to Apple Watch." data-platform-text-android="Sync unit and display preferences back to Wear OS.">Sync unit and display preferences back to Apple Watch.</li>
         </ul>
       </div>
     </section>
@@ -169,20 +187,20 @@
       </div>
       <div class="model-gallery" id="screenshots">
         <figure>
-          <img src="assets/screenshots/watch/blend.png" alt="Blend forecast chart on Apple Watch">
-          <figcaption>Blend model</figcaption>
+          <img src="assets/screenshots/watch/blend.png" alt="Blend forecast chart on Apple Watch" data-platform-src-apple="assets/screenshots/watch/blend.png" data-platform-src-android="assets/screenshots/wear/hrrr.png" data-platform-alt-apple="Blend forecast chart on Apple Watch" data-platform-alt-android="HRRR forecast chart on Wear OS">
+          <figcaption data-platform-text-apple="Blend model" data-platform-text-android="HRRR model">Blend model</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/watch/nam3k.png" alt="NAM 3k forecast chart on Apple Watch">
-          <figcaption>NAM 3k model</figcaption>
+          <img src="assets/screenshots/watch/nam3k.png" alt="NAM 3k forecast chart on Apple Watch" data-platform-src-apple="assets/screenshots/watch/nam3k.png" data-platform-src-android="assets/screenshots/wear/spot.png" data-platform-alt-apple="NAM 3k forecast chart on Apple Watch" data-platform-alt-android="Spot detail screen on Wear OS">
+          <figcaption data-platform-text-apple="NAM 3k model" data-platform-text-android="Spot detail">NAM 3k model</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/watch/radar.png" alt="Radar frame on Apple Watch">
+          <img src="assets/screenshots/watch/radar.png" alt="Radar frame on Apple Watch" data-platform-src-apple="assets/screenshots/watch/radar.png" data-platform-src-android="assets/screenshots/wear/radar.png" data-platform-alt-apple="Radar frame on Apple Watch" data-platform-alt-android="Radar frame on Wear OS">
           <figcaption>Radar loop</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/watch/workout_summary.png" alt="Workout summary on Apple Watch">
-          <figcaption>Workout summary</figcaption>
+          <img src="assets/screenshots/watch/workout_summary.png" alt="Workout summary on Apple Watch" data-platform-src-apple="assets/screenshots/watch/workout_summary.png" data-platform-src-android="assets/screenshots/wear/subscribe.png" data-platform-alt-apple="Workout summary on Apple Watch" data-platform-alt-android="Subscription trial screen on Wear OS">
+          <figcaption data-platform-text-apple="Workout summary" data-platform-text-android="Free trial">Workout summary</figcaption>
         </figure>
       </div>
     </section>
@@ -195,19 +213,19 @@
       </div>
       <div class="settings-grid">
         <figure>
-          <img src="assets/screenshots/watch/settings.png" alt="Apple Watch settings screen">
-          <figcaption>Watch settings</figcaption>
+          <img src="assets/screenshots/watch/settings.png" alt="Apple Watch settings screen" data-platform-src-apple="assets/screenshots/watch/settings.png" data-platform-src-android="assets/screenshots/wear/settings.png" data-platform-alt-apple="Apple Watch settings screen" data-platform-alt-android="Wear OS settings screen">
+          <figcaption data-platform-text-apple="Watch settings" data-platform-text-android="Wear settings">Watch settings</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/iphone/settings.png" alt="iPhone settings screen">
-          <figcaption>iPhone settings</figcaption>
+          <img src="assets/screenshots/iphone/settings.png" alt="iPhone settings screen" data-platform-src-apple="assets/screenshots/iphone/settings.png" data-platform-src-android="assets/screenshots/android/settings.png" data-platform-alt-apple="iPhone settings screen" data-platform-alt-android="Android settings screen">
+          <figcaption data-platform-text-apple="iPhone settings" data-platform-text-android="Android settings">iPhone settings</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/watch/waterlock.png" alt="Water lock instruction on Apple Watch">
-          <figcaption>Water lock</figcaption>
+          <img src="assets/screenshots/watch/waterlock.png" alt="Water lock instruction on Apple Watch" data-platform-src-apple="assets/screenshots/watch/waterlock.png" data-platform-src-android="assets/screenshots/wear/profiles.png" data-platform-alt-apple="Water lock instruction on Apple Watch" data-platform-alt-android="Profiles screen on Wear OS">
+          <figcaption data-platform-text-apple="Water lock" data-platform-text-android="Profiles">Water lock</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/watch/subscribe.png" alt="Subscription trial screen on Apple Watch">
+          <img src="assets/screenshots/watch/subscribe.png" alt="Subscription trial screen on Apple Watch" data-platform-src-apple="assets/screenshots/watch/subscribe.png" data-platform-src-android="assets/screenshots/wear/subscribe.png" data-platform-alt-apple="Subscription trial screen on Apple Watch" data-platform-alt-android="Subscription trial screen on Wear OS">
           <figcaption>Free trial</figcaption>
         </figure>
       </div>
@@ -218,7 +236,7 @@
         <p class="eyebrow">Works with your wind account</p>
         <h2>WeatherFlow network favorites, iWind presentation.</h2>
       </div>
-      <p>iWind is made for wind sports users who already rely on WeatherFlow-powered services. It reads your authenticated profiles and spots, caches the latest snapshot for widgets, and keeps selection state in sync between iPhone, Apple Watch, and complications.</p>
+      <p data-platform-text-apple="iWind is made for wind sports users who already rely on WeatherFlow-powered services. It reads your authenticated profiles and spots, caches the latest snapshot for widgets, and keeps selection state in sync between iPhone, Apple Watch, and complications." data-platform-text-android="iWind is made for wind sports users who already rely on WeatherFlow-powered services. It reads your authenticated profiles and spots, caches the latest snapshot for widgets, and keeps selection state in sync between Android and Wear OS.">iWind is made for wind sports users who already rely on WeatherFlow-powered services. It reads your authenticated profiles and spots, caches the latest snapshot for widgets, and keeps selection state in sync between iPhone, Apple Watch, and complications.</p>
     </section>
   </main>
   <app-support-form project="iwind"></app-support-form>

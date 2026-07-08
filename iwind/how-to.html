@@ -12,19 +12,20 @@
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="How to navigate the iWind Apple Watch and iPhone app.">
+  <meta name="description" content="How to navigate the iWind watch and phone app.">
   <title>How To Navigate iWind</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="platform.js" defer></script>
 </head>
-<body>
+<body data-platform="apple">
   <header class="site-header" aria-label="Main navigation">
     <a class="brand" href="index.html" aria-label="iWind home">
       <img src="assets/icon.png" alt="" width="44" height="44">
       <span>iWind</span>
     </a>
     <nav aria-label="Page sections">
-      <a href="index.html#watch">Watch</a>
-      <a href="index.html#iphone">iPhone</a>
+      <a href="index.html#watch" data-platform-text-apple="Watch" data-platform-text-android="Wear OS">Watch</a>
+      <a href="index.html#iphone" data-platform-text-apple="iPhone" data-platform-text-android="Android">iPhone</a>
       <a href="index.html#forecast">Forecasts</a>
       <a href="index.html#settings">Settings</a>
       <a href="how-to.html">How To</a>
@@ -38,10 +39,13 @@
       <div class="section-heading">
         <p class="eyebrow">How To</p>
         <h1>Navigate iWind</h1>
-        <p>The Apple Watch app is organized around the spot view. From there, a few simple gestures take you to profiles, settings, radar, and forecast charts.</p>
+        <p data-platform-text-apple="The Apple Watch app is organized around the spot view. From there, a few simple gestures take you to profiles, settings, radar, and forecast charts." data-platform-text-android="The Wear OS app is organized around the spot view. From there, a few simple gestures take you to profiles, settings, radar, and forecast charts.">The Apple Watch app is organized around the spot view. From there, a few simple gestures take you to profiles, settings, radar, and forecast charts.</p>
       </div>
       <figure class="flow-diagram compact-flow">
-        <img src="assets/screen-flow.png" width="2400" height="900" decoding="async" alt="Diagram showing the iWind spot screen in the center with profiles above, settings to the left, radar to the right, and forecast charts below">
+        <img src="assets/screen-flow.png" width="2400" height="1800" decoding="async" alt="Diagram showing the iWind Apple Watch spot screen flow" data-platform-src-apple="assets/screen-flow.png" data-platform-src-android="assets/wearos-screen-flow.png" data-platform-alt-apple="Diagram showing the iWind Apple Watch spot screen flow" data-platform-alt-android="Diagram showing the iWind Wear OS spot screen flow">
+        <figcaption>
+          <a class="download-link" href="how-to.pdf" data-platform-href-apple="how-to.pdf" data-platform-href-android="wearos-how-to.pdf" data-platform-text-apple="Download Apple Watch guide" data-platform-text-android="Download Wear OS guide">Download Apple Watch guide</a>
+        </figcaption>
       </figure>
     </section>
 
@@ -50,7 +54,7 @@
         <article>
           <span class="feature-mark">01</span>
           <h2>Start at the spot view</h2>
-          <p>The main Apple Watch screen shows the selected spot with wind speed, direction, temperature, and the latest update age.</p>
+          <p data-platform-text-apple="The main Apple Watch screen shows the selected spot with wind speed, direction, temperature, and the latest update age." data-platform-text-android="The main Wear OS screen shows the selected spot with wind speed, direction, temperature, and the latest update age.">The main Apple Watch screen shows the selected spot with wind speed, direction, temperature, and the latest update age.</p>
         </article>
         <article>
           <span class="feature-mark">02</span>
@@ -69,13 +73,13 @@
         </article>
         <article>
           <span class="feature-mark">05</span>
-          <h2>Use iPhone for management</h2>
-          <p>On iPhone, sign in, manage profiles, search for spots, add spots, remove spots, and sync settings back to Apple Watch.</p>
+          <h2 data-platform-text-apple="Use iPhone for management" data-platform-text-android="Use Android for management">Use iPhone for management</h2>
+          <p data-platform-text-apple="On iPhone, sign in, manage profiles, search for spots, add spots, remove spots, and sync settings back to Apple Watch." data-platform-text-android="On Android, sign in, manage profiles, search for spots, add spots, remove spots, and sync settings back to Wear OS.">On iPhone, sign in, manage profiles, search for spots, add spots, remove spots, and sync settings back to Apple Watch.</p>
         </article>
         <article>
           <span class="feature-mark">06</span>
           <h2>Keep it glanceable</h2>
-          <p>Add a complication or widget so the selected spot remains visible without opening the app.</p>
+          <p data-platform-text-apple="Add a complication or widget so the selected spot remains visible without opening the app." data-platform-text-android="Add a tile or widget so the selected spot remains visible without opening the app.">Add a complication or widget so the selected spot remains visible without opening the app.</p>
         </article>
       </div>
     </section>
