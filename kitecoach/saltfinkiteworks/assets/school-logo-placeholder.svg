@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260">
+  <rect width="900" height="260" rx="36" fill="#0f766e"/>
+  <path d="M168 130c60-70 165-70 225 0-76-26-149-26-225 0z" fill="#ffffff" opacity=".96"/>
+  <circle cx="140" cy="147" r="18" fill="#facc15"/>
+  <text x="450" y="160" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" fill="#ffffff">SCHOOL LOGO</text>
+</svg>

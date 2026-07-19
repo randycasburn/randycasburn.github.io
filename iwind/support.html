@@ -5,27 +5,28 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VEGPDYEHX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-6VEGPDYEHX');
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Support for the iWind watch and phone app.">
+  <meta name="description" content="Support, FAQ, and getting started information for the iWind watch and phone app.">
   <title>Support for iWind</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="platform.js" defer></script>
   <script type="module" src="https://support.randycasburn.com/support-form.js" defer></script>
 </head>
-<body>
+<body data-platform="apple">
 <header class="site-header" aria-label="Main navigation">
   <a class="brand" href="index.html" aria-label="iWind home">
     <img src="assets/icon.png" alt="" width="44" height="44">
     <span>iWind</span>
   </a>
   <nav aria-label="Page sections">
-    <a href="index.html#watch">Watch</a>
-    <a href="index.html#iphone">iPhone</a>
+    <a href="index.html#watch" data-platform-text-apple="Watch" data-platform-text-android="Wear OS">Watch</a>
+    <a href="index.html#iphone" data-platform-text-apple="iPhone" data-platform-text-android="Android">iPhone</a>
     <a href="index.html#forecast">Forecasts</a>
     <a href="index.html#settings">Settings</a>
     <a href="how-to.html">How To</a>
@@ -35,15 +36,127 @@
 </header>
 
 <main id="top">
-  <section style="width:100vw; text-align: center; margin-top: 50px" class="page-hero">
+  <section class="section page-hero support-hero">
     <div class="section-heading">
-      <p style="margin: 0 auto" class="eyebrow">Getting...</p>
-      <h1>Support</h1>
-      <p style="margin: 0 auto">Please take the time to describe the issue as precisely as you can in the form below. Screenshots are really helpful too.</p>
+      <p class="eyebrow">Support</p>
+      <h1>iWind Help</h1>
+      <p data-platform-text-apple="Find answers for the iWind iPhone and Apple Watch apps, then contact support if you still need a hand." data-platform-text-android="Find answers for the iWind Android and Wear OS apps, then contact support if you still need a hand.">Find answers for the iWind iPhone and Apple Watch apps, then contact support if you still need a hand.</p>
+    </div>
+    <nav class="support-actions" aria-label="Support topics">
+      <a href="#more-info">More Info</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact Support</a>
+    </nav>
+  </section>
+
+  <section id="more-info" class="section support-section">
+    <div class="section-heading">
+      <p class="eyebrow">More Info</p>
+      <h2>How iWind is organized</h2>
+      <p data-platform-text-apple="The iPhone app manages your account, profiles, spots, and settings. Apple Watch keeps the wind, radar, and forecast tools close when you are outside." data-platform-text-android="The Android app manages your account, profiles, spots, and settings. Wear OS keeps the wind, radar, and forecast tools close when you are outside.">The iPhone app manages your account, profiles, spots, and settings. Apple Watch keeps the wind, radar, and forecast tools close when you are outside.</p>
+    </div>
+
+    <div class="support-card-grid">
+      <article class="support-card">
+        <span class="feature-mark">General</span>
+        <h3>Tempest account access</h3>
+        <p>Your subscription gives you access to Tempest network spots, favorite profiles, forecast models, radar, and more.</p>
+        <p>Sign in with the same Tempest account you use for Tempest lifestyle apps.</p>
+      </article>
+      <article class="support-card">
+        <span class="feature-mark" data-platform-text-apple="iPhone" data-platform-text-android="Android">iPhone</span>
+        <h3>Manage on your phone</h3>
+        <p data-platform-text-apple="Use iPhone to sign in, manage profiles, add spots, search nearby locations, change units, and open Getting Started again from Help." data-platform-text-android="Use Android to sign in, manage profiles, add spots, search nearby locations, change units, and open Getting Started again from Help.">Use iPhone to sign in, manage profiles, add spots, search nearby locations, change units, and open Getting Started again from Help.</p>
+      </article>
+      <article class="support-card">
+        <span class="feature-mark" data-platform-text-apple="Watch" data-platform-text-android="Wear OS">Watch</span>
+        <h3>Check conditions fast</h3>
+        <p data-platform-text-apple="Apple Watch shows your selected profile and spots, current wind, forecast charts, radar, and key settings synced from iPhone." data-platform-text-android="Wear OS shows your selected profile and spots, current wind, forecast charts, radar, and key settings synced from Android.">Apple Watch shows your selected profile and spots, current wind, forecast charts, radar, and key settings synced from iPhone.</p>
+      </article>
     </div>
   </section>
+
+  <section id="faq" class="section support-faq">
+    <div class="section-heading">
+      <p class="eyebrow">FAQ</p>
+      <h2>Common Questions</h2>
+    </div>
+
+    <div class="faq-grid">
+      <section class="faq-group" aria-labelledby="faq-general">
+        <h3 id="faq-general">General</h3>
+        <details>
+          <summary>What account do I use?</summary>
+          <p>Use the same Tempest account you use for Tempest lifestyle apps.</p>
+        </details>
+        <details>
+          <summary>Do I need a Tempest account?</summary>
+          <p>Yes. A free Tempest account is enough to sign in. Your iWind subscription unlocks iWind features.</p>
+          <p>Sign up for a free Tempest account at <a href="https://tempest.earth/personal-apps/">Tempest LIfestyle Apps</a>.</p>
+        </details>
+        <details>
+          <summary>What does the subscription include?</summary>
+          <p>Your subscription includes access to Tempest network spots, favorite profiles, forecast models, radar, and more.</p>
+          <p>Some Tempest spots are only available to upgraded (paid) Tempest accounts. That is a separate subscription.</p>
+        </details>
+      </section>
+
+      <section class="faq-group" aria-labelledby="faq-phone">
+        <h3 id="faq-phone" data-platform-text-apple="iPhone" data-platform-text-android="Android">iPhone</h3>
+        <details>
+          <summary>How do I add a profile?</summary>
+          <p>Open Profiles, tap the add button, name the profile, then save it.</p>
+        </details>
+        <details>
+          <summary>How do I add a spot?</summary>
+          <p>Open a profile, tap the add button in Spots, search for a location, select a result, then add it to the profile.</p>
+        </details>
+        <details>
+          <summary>How do I change units?</summary>
+          <p>Open Settings and choose your distance, wind, and temperature units.</p>
+        </details>
+        <details>
+          <summary>How do I see Getting Started again?</summary>
+          <p>Open Help and choose Getting Started. You can also start the phone or watch tour from Help.</p>
+        </details>
+      </section>
+
+      <section class="faq-group" aria-labelledby="faq-watch">
+        <h3 id="faq-watch" data-platform-text-apple="Watch" data-platform-text-android="Wear OS">Watch</h3>
+        <details>
+          <summary>How do I find charts and radar?</summary>
+          <p>See <a href="how-to.html">How To</a></p>
+        </details>
+        <details>
+          <summary>How do I find radar?</summary>
+          <p data-platform-text-apple="Open radar from the spot view using the cloud and lightning button.">Open radar from the spot view by swiping to the right.</p>
+        </details>
+        <details>
+          <summary>How do I find forecast charts?</summary>
+          <p>Open forecast charts by clicking on a spot. Some spots come with multiple charts so you can compare available forecast models. If more than one chart you can scroll to see the others.</p>
+        </details>
+        <details>
+          <summary>Why does watch data look stale?</summary>
+          <p>There are multiple reasons this can happen.</p>
+          <p>The most common reason this happens is due to the spot not being updated recently. The weather station data update timelines vary by location and equipment. Some spots update every 5 minutes while others update once a day. It is also possible that the spot is completely offline but not reporting such.</p>
+          <p>Ensure your device is connected to the internet.</p>
+          <p>Ensure you are signed in to the app on the phone and your phone and watch are nearby long enough to sync.</p>
+          <p></p>
+        </details>
+      </section>
+    </div>
+  </section>
+
+  <section id="contact" class="section support-contact">
+    <div class="section-heading">
+      <p class="eyebrow">Contact</p>
+      <h2>Still Need Help?</h2>
+      <p>Please describe the issue as precisely as you can. Screenshots are really helpful too.</p>
+    </div>
+    <app-support-form project="iwind"></app-support-form>
+  </section>
 </main>
-<app-support-form project="iwind"></app-support-form> 
+
 <footer class="site-footer">
   <span>iWind by &copy; <a href="https://randycasburn.com">Randy Casburn.</a></span>
   <a href="#top">Back to top</a>

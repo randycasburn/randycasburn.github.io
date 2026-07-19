@@ -4,10 +4,15 @@ const defaultPlatform = "apple";
 function getRequestedPlatform() {
   const params = new URLSearchParams(window.location.search);
   const queryPlatform = params.get("platform");
+  const appPlatform = params.get("app");
   const savedPlatform = window.localStorage.getItem("iwind-platform");
 
   if (platforms.has(queryPlatform)) {
     return queryPlatform;
+  }
+
+  if (platforms.has(appPlatform)) {
+    return appPlatform;
   }
 
   if (platforms.has(savedPlatform)) {

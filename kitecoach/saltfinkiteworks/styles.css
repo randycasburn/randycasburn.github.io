@@ -1,0 +1,231 @@
+
+:root {
+  --primary: #0f766e;
+  --secondary: #0ea5e9;
+  --tertiary: #facc15;
+  --ink: #102027;
+  --muted: #607079;
+  --paper: #ffffff;
+  --soft: #f4fbfb;
+  --line: #d7e6e6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: #eef7f7;
+}
+
+.nav {
+  max-width: 980px;
+  margin: 24px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  margin: 24px auto;
+  background: var(--paper);
+  box-shadow: 0 8px 30px rgba(0,0,0,.14);
+  padding: .55in;
+  position: relative;
+}
+
+.logo {
+  display: block;
+  max-width: 4.4in;
+  max-height: 1.05in;
+  margin: 0 auto .34in auto;
+}
+
+.center { text-align: center; }
+
+.eyebrow {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 800;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 43px;
+  line-height: 1.05;
+  margin: 0 0 14px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0 0 14px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.45;
+  margin: 0 0 16px;
+}
+
+.qr {
+  width: 3.35in;
+  height: 3.35in;
+  display: block;
+  margin: .25in auto;
+}
+
+.store-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin: 18px 0 24px;
+}
+
+.store-badge {
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.powered {
+  border-top: 3px solid var(--line);
+  padding-top: .32in;
+  margin-top: .25in;
+}
+
+.kc-logo {
+  display: block;
+  max-width: 3.2in;
+  max-height: .82in;
+  margin: 10px auto 18px;
+}
+
+.remember {
+  background: var(--soft);
+  border: 2px solid var(--line);
+  border-left: 10px solid var(--primary);
+  border-radius: 16px;
+  padding: 22px 26px;
+  margin-top: 20px;
+}
+
+.remember ul {
+  margin: 12px 0 0;
+  padding-left: 24px;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.signature {
+  margin-top: 18px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.url {
+  font-size: 13px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.small-note {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.counter-card {
+  width: 8.5in;
+  height: 11in;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: .25in;
+}
+
+.card-half {
+  border: 2px dashed var(--line);
+  padding: .35in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-half h1 { font-size: 34px; }
+
+.card-half .qr {
+  width: 2.45in;
+  height: 2.45in;
+  margin: .18in auto;
+}
+
+.qr-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .25in;
+}
+
+.qr-tile {
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  padding: .2in;
+  text-align: center;
+}
+
+.qr-tile img {
+  width: 2.1in;
+  height: 2.1in;
+}
+
+.qr-tile h2 {
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+.instructions {
+  max-width: 980px;
+  margin: 24px auto;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.instructions code {
+  background: #eef7f7;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+@media print {
+  body { background: white; }
+  .nav, .instructions { display: none; }
+  .page {
+    margin: 0;
+    box-shadow: none;
+    width: 8.5in;
+    min-height: 11in;
+    page-break-after: always;
+  }
+}
+
+@page {
+  size: Letter;
+  margin: 0;
+}
