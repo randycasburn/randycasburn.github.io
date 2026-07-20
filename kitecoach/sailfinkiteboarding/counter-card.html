@@ -66,7 +66,7 @@ body {
 .page,
 .landing {
   width: 8.5in;
-  min-height: 11in;
+  height: 11in;
   margin: 24px auto;
   background: var(--paper);
   box-shadow: 0 8px 30px rgba(0,0,0,.14);
@@ -76,6 +76,7 @@ body {
 
 .landing {
   width: min(100%, 920px);
+  height: auto;
   min-height: 0;
   box-shadow: none;
 }
@@ -150,6 +151,76 @@ p {
 .large-qr {
   width: 3.35in;
   height: 3.35in;
+}
+
+.poster-page {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: .42in .55in;
+}
+
+.poster-page .logo {
+  max-height: .8in;
+  margin-bottom: .22in;
+}
+
+.poster-page .logo-frame {
+  margin-bottom: .22in;
+  padding: .14in .24in;
+}
+
+.poster-page h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.poster-page p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.poster-page .large-qr {
+  width: 2.85in;
+  height: 2.85in;
+  margin: .14in auto;
+}
+
+.poster-page .store-row {
+  margin: 12px 0 16px;
+}
+
+.poster-page .powered {
+  padding-top: .18in;
+  margin-top: .04in;
+}
+
+.poster-page .kc-logo {
+  width: .52in;
+  height: .52in;
+  margin: 6px auto 8px;
+}
+
+.poster-page .remember {
+  margin-top: 8px;
+  padding: 14px 18px;
+  border-left-width: 8px;
+  border-radius: 10px;
+}
+
+.poster-page .remember h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.poster-page .remember ul {
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.poster-page .signature {
+  margin-top: 10px;
 }
 
 .store-row {
@@ -541,6 +612,7 @@ textarea {
   .page,
   .landing {
     width: 100%;
+    height: auto;
     min-height: 0;
     margin: 0;
     padding: 28px;
@@ -567,7 +639,7 @@ textarea {
     margin: 0;
     box-shadow: none;
     width: 8.5in;
-    min-height: 11in;
+    height: 11in;
     page-break-after: always;
   }
 
