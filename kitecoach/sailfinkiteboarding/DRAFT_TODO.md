@@ -7,21 +7,22 @@ This folder contains draft, editable KiteCoach partner materials generated from 
 - `index.html` - password-gated review and approval page
 - `preview.html` - editable partner landing page draft
 - `poster.html` - printable 8.5 x 11 classroom poster
-- `counter-card.html` - printable 8.5 x 11 foldable counter card
+- `foldable-card.html` - printable 8.5 x 11 foldable counter card
 - `qr-assets.html` - QR usage sheet
 - `assets/qr-code.png` and `assets/qr-code.svg` - QR code for the destination URL
-- `assets/qr-code-assets.zip` - downloadable ZIP containing both QR code files
+- `assets/README.html` and `assets/README.pdf` - customer-facing support document
+- `assets/assets.zip` - downloadable ZIP containing README.pdf, printable PDFs, and both QR code files
 - `assets/school-logo.*` - best detected school logo
 - `assets/kitecoach-logo.png` - KiteCoach logo asset
 - `assets/colors.json` - approximate colors extracted from the school website or logo
 
 ## Source
 
-- Source URL: https://realwatersports.com/
+- Source URL: https://www.sailfinkiteboarding.com/
 - Destination URL: https://randycasburn.com/kitecoach/sailfinkiteboarding
 - Slug: sailfinkiteboarding
 - Inferred school name: Sail Fin
-- Logo source: https://www.realwatersports.com/cdn/shop/files/logo_white_v12_x220.png?v=1614729749
+- Logo source: /Users/randy/workspace/kite-coach-partners/kitecoach_partner_kit_template/sailfinkiteboarding/school-logo.png
 
 ## Extracted colors
 
@@ -35,7 +36,7 @@ This folder contains draft, editable KiteCoach partner materials generated from 
 
 ## Print
 
-Open `poster.html`, `counter-card.html`, or `qr-assets.html` in a browser and print to PDF or paper.
+Open `poster.html`, `foldable-card.html`, or `qr-assets.html` in a browser and print to PDF or paper.
 
 Recommended print settings:
 

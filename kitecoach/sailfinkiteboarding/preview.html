@@ -157,70 +157,72 @@ p {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: .42in .55in;
+  height: 10.45in;
+  min-height: 10.45in;
+  padding: .24in;
 }
 
 .poster-page .logo {
-  max-height: .8in;
-  margin-bottom: .22in;
+  max-height: .62in;
+  margin-bottom: .12in;
 }
 
 .poster-page .logo-frame {
-  margin-bottom: .22in;
-  padding: .14in .24in;
+  margin-bottom: .12in;
+  padding: .08in .16in;
 }
 
 .poster-page h1 {
-  font-size: 38px;
-  margin-bottom: 10px;
+  font-size: 32px;
+  margin-bottom: 6px;
 }
 
 .poster-page p {
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 14px;
+  margin-bottom: 6px;
 }
 
 .poster-page .large-qr {
-  width: 2.85in;
-  height: 2.85in;
-  margin: .14in auto;
+  width: 2.42in;
+  height: 2.42in;
+  margin: .06in auto;
 }
 
 .poster-page .store-row {
-  margin: 12px 0 16px;
+  margin: 6px 0 8px;
 }
 
 .poster-page .powered {
-  padding-top: .18in;
-  margin-top: .04in;
+  padding-top: .08in;
+  margin-top: 0;
 }
 
 .poster-page .kc-logo {
-  width: .52in;
-  height: .52in;
-  margin: 6px auto 8px;
+  width: .38in;
+  height: .38in;
+  margin: 3px auto 4px;
 }
 
 .poster-page .remember {
-  margin-top: 8px;
-  padding: 14px 18px;
-  border-left-width: 8px;
-  border-radius: 10px;
+  margin-top: 4px;
+  padding: 8px 14px;
+  border-left-width: 7px;
+  border-radius: 8px;
 }
 
 .poster-page .remember h2 {
-  font-size: 20px;
-  margin-bottom: 8px;
+  font-size: 16px;
+  margin-bottom: 4px;
 }
 
 .poster-page .remember ul {
-  margin-top: 6px;
-  font-size: 15px;
-  line-height: 1.35;
+  margin-top: 3px;
+  font-size: 13px;
+  line-height: 1.22;
 }
 
 .poster-page .signature {
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .store-row {
@@ -232,21 +234,21 @@ p {
 }
 
 .store-badge {
-  min-width: 1.82in;
-  min-height: .58in;
+  min-width: 1.62in;
+  min-height: .46in;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   color: #ffffff;
   background: #111111;
   border: 1px solid #111111;
   border-radius: 8px;
-  padding: 8px 14px;
+  padding: 6px 10px;
   text-decoration: none;
   text-align: left;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.05;
 }
 
@@ -256,14 +258,14 @@ p {
 }
 
 .store-kicker {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
 }
 
 .store-icon {
-  width: 24px;
-  height: 24px;
-  flex: 0 0 24px;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
 }
 
 .powered {
@@ -274,10 +276,10 @@ p {
 
 .kc-logo {
   display: block;
-  width: .72in;
-  height: .72in;
+  width: .62in;
+  height: .62in;
   object-fit: contain;
-  margin: 10px auto 18px;
+  margin: 8px auto 14px;
 }
 
 .remember {
@@ -303,6 +305,68 @@ p {
   color: var(--primary);
 }
 
+.support-page {
+  height: auto;
+  min-height: 10.45in;
+  padding: .32in .48in;
+}
+
+.support-page h1 {
+  max-width: 6.5in;
+  font-size: 26px;
+  line-height: 1.08;
+  margin-bottom: 8px;
+}
+
+.support-page h2 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.support-page p,
+.support-page li {
+  font-size: 11px;
+  line-height: 1.28;
+  margin-bottom: 6px;
+}
+
+.support-section {
+  margin-bottom: 7px;
+}
+
+.support-summary {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--primary);
+  border-radius: 6px;
+  background: var(--soft);
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin: 8px 0 9px;
+}
+
+.support-grid > div {
+  min-height: 0;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.print-settings ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.support-footer {
+  margin-top: 8px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
 .url {
   font-size: 13px;
   color: #607079;
@@ -314,18 +378,23 @@ p {
   color: #607079;
 }
 
-.counter-card {
-  height: 11in;
-  min-height: 11in;
-  padding: .38in;
+.demo-password-note {
+  margin: -4px 0 0;
+  text-align: center;
+}
+
+.foldable-card {
+  height: 10.45in;
+  min-height: 10.45in;
+  padding: .24in;
   display: grid;
   grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-  gap: .16in;
+  gap: .08in;
 }
 
 .card-half {
   border: 2px dashed var(--line);
-  padding: .22in .3in;
+  padding: .12in .22in;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -337,61 +406,61 @@ p {
 }
 
 .card-half h1 {
-  font-size: 28px;
+  font-size: 23px;
   line-height: 1.04;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .card-half p {
-  font-size: 15px;
-  line-height: 1.3;
-  margin-bottom: 8px;
+  font-size: 13px;
+  line-height: 1.24;
+  margin-bottom: 5px;
 }
 
-.counter-card .logo {
+.foldable-card .logo {
   max-width: 3.8in;
-  max-height: .62in;
-  margin-bottom: .16in;
+  max-height: .46in;
+  margin-bottom: .06in;
 }
 
-.counter-card .logo-frame {
+.foldable-card .logo-frame {
   max-width: 4.35in;
-  margin-bottom: .16in;
-  padding: .12in .2in;
+  margin-bottom: .06in;
+  padding: .06in .12in;
 }
 
-.counter-card .logo-frame .logo {
+.foldable-card .logo-frame .logo {
   margin-bottom: 0;
 }
 
 .card-half .qr {
-  width: 2.05in;
-  height: 2.05in;
-  margin: .1in auto;
+  width: 1.58in;
+  height: 1.58in;
+  margin: .04in auto;
 }
 
 .card-half .remember {
-  border-left-width: 7px;
-  border-radius: 10px;
-  margin-top: 8px;
-  padding: 14px 16px;
+  border-left-width: 6px;
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 8px 12px;
 }
 
 .card-half .remember h2 {
-  font-size: 18px;
-  margin-bottom: 7px;
+  font-size: 14px;
+  margin-bottom: 4px;
 }
 
 .card-half .remember ul {
-  font-size: 14px;
-  line-height: 1.35;
-  margin: 6px 0 0;
-  padding-left: 18px;
+  font-size: 12px;
+  line-height: 1.22;
+  margin: 3px 0 0;
+  padding-left: 16px;
 }
 
 .card-half .signature {
-  font-size: 13px;
-  margin-top: 8px;
+  font-size: 11px;
+  margin-top: 5px;
   margin-bottom: 0;
 }
 
@@ -639,7 +708,12 @@ textarea {
     margin: 0;
     box-shadow: none;
     width: 8.5in;
-    height: 11in;
+    height: 10.72in;
+    overflow: hidden;
+  }
+
+  .page:not(:last-child) {
+    break-after: page;
     page-break-after: always;
   }
 
@@ -687,6 +761,7 @@ textarea {
         <span><span class="store-kicker">Get it on</span><strong>Google Play</strong></span>
       </a>
     </div>
+    <p class="small-note center">No passwords, no accounts, no tracking, no data collection.</p>
   </section>
   <section class="remember">
     <h2>Remember:</h2>
