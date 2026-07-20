@@ -49,7 +49,7 @@ Recommended print settings:
 Open `index.html` to review the draft package.
 
 - Review password: `kitecoach`
-- Approval endpoint: `https://app-support-vercel-dnkm89nbq-randycasburns-projects.vercel.app/api/feedback`
+- Approval endpoint: `https://support.randycasburn.com/api/feedback`
 
 The review gate is intentionally lightweight and is not real authentication. The approval endpoint must allow public POST requests from the page location before approval submissions will send successfully.
 
