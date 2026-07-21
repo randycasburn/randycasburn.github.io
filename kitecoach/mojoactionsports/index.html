@@ -178,7 +178,6 @@ p {
 }
 
 .poster-page p {
-  font-size: 14px;
   margin-bottom: 6px;
 }
 
@@ -392,6 +391,13 @@ p {
   gap: .08in;
 }
 
+.foldable-card .kc-logo {
+  width: .38in;
+  height: .38in;
+  margin: 3px auto 4px;
+}
+
+
 .card-half {
   border: 2px dashed var(--line);
   padding: .12in .22in;
@@ -412,7 +418,6 @@ p {
 }
 
 .card-half p {
-  font-size: 13px;
   line-height: 1.24;
   margin-bottom: 5px;
 }
@@ -447,19 +452,18 @@ p {
 }
 
 .card-half .remember h2 {
-  font-size: 14px;
   margin-bottom: 4px;
 }
 
 .card-half .remember ul {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.22;
   margin: 3px 0 0;
   padding-left: 16px;
 }
 
 .card-half .signature {
-  font-size: 11px;
+  /* font-size: 11px; */
   margin-top: 5px;
   margin-bottom: 0;
 }
@@ -774,6 +778,7 @@ textarea {
         <p class="review-kicker">Step 3 - Product Review</p>
         <h1>Product Review</h1>
         <div class="preview-actions">
+          <button type="button" class="preview-button" data-instructions>Instructions</button>&nbsp;&nbsp;
           <button type="button" class="preview-button" data-foldable>Foldable Table Tent</button>&nbsp;&nbsp;
           <button type="button" class="preview-button" data-poster>Poster</button>
         </div>
@@ -789,9 +794,13 @@ textarea {
         <p>By approving this content you authorize Randy Casburn to use your company name and logo for the sole purpose as it has been presented here and on the accompanying documents/artifacts.</p>
       </div>
       <div class="approval-actions">
-        <button type="button" class="approval-button" data-approve>Approved</button>
+        <form id="approval" style="flex: 1">
+          <label>Name: <input id="name" name="name" required style="width: 50%; margin: 10px;" type="text"/></label>
+          <label>E-mail: <input id="email" name="email" required style="width: 50%; margin: 10px;" type="email"/></label>
+          <button type="submit" class="center approval-button" data-approve>Approved</button>
+        </form>
       </div>
-      <small>The Poster, Foldable Table Tent, QR Code Sheet and QR Code images will be downloadable once the preview is approved.</small>
+      <small class="center">The Poster, Foldable Table Tent, QR Code Sheet and QR Code images will be downloadable once the preview is approved.</small>
       <section class="download-panel" data-downloads hidden>
         <h2>Approved download package</h2>
         <p>Instructions for use are provided along side the assets included in this package.</p>
@@ -817,6 +826,7 @@ textarea {
   const downloads = document.querySelector('[data-downloads]');
   const contentStep = document.querySelector('[data-content-step]');
   const finalStep = document.querySelector('[data-final-step]');
+  const approverForm = document.querySelector('#approval')
 
   if (assumeAuthenticated) {
     window.localStorage.setItem('auth', 'true');
@@ -860,16 +870,29 @@ textarea {
     window.open('foldable-card.html', '_blank', 'noopener');
   });
 
+  document.querySelector('[data-instructions]').addEventListener('click', () => {
+    window.open('assets/README.pdf', '_blank', 'noopener');
+  });
+
 
 
   async function sendApproval() {
-    reviewMessage.textContent = 'Sending...';
+ reviewMessage.textContent = 'Sending...';
+    const partnerName = approval.name.value.trim();
+    const partnerEmail = approval.email.value.trim();
+    let message = "A new KiteCoach partner has been approved by {{partnerName}} ({{partnerEmail}}).\n\n\n    School Name: Mojo Actionsports\n\n    Source URL: https://mojoactionsports.shop/\n\n    Destination URL: https://randycasburn.com/kitecoach/mojoactionsports\n\n    Slug: mojoactionsports\n";
+    message = message.replace('{{partnerName}}', partnerName);
+    message = message.replace('{{partnerEmail}}', partnerEmail);
+
     const payload = {
-      type: 'partner-kit-review',
-      status: 'approved',
+      project: 'KiteCoach',
+      type: 'approval',
+      name: partnerName,
+      email: partnerEmail,
+      preferredContact: 'email',
+      subject: "Mojo Actionsports Partner Approval",
+      message: message,
       submittedAt: new Date().toISOString(),
-      partner,
-      pageUrl: window.location.href,
     };
 
     const response = await fetch(approvalEndpoint, {
@@ -882,12 +905,15 @@ textarea {
       throw new Error('Approval service returned HTTP ' + response.status);
     }
 
-    reviewMessage.textContent = 'Thank you. Your approval has been sent.';
+    reviewMessage.textContent = 'Thank you ' + partnerName +'. Your approval has been sent.';
     downloads.hidden = false;
+    document.querySelector('.approval-actions').style.display = 'none';
   }
 
-  document.querySelector('[data-approve]').addEventListener('click', () => {
-    sendApproval().catch((error) => {
+  approverForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    approverForm.style.display = 'none'
+    sendApproval(approverForm.name.value.trim()).catch((error) => {
       reviewMessage.textContent = 'Could not send approval. Please contact KiteCoach directly. ' + error.message;
     });
   });
