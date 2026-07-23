@@ -102,6 +102,58 @@ function bindStorePopover() {
   });
 }
 
+function bindPageLoadAlert() {
+  const alertElement = document.querySelector("[data-page-load-alert]");
+  const dismissButtons = document.querySelectorAll("[data-page-load-alert-dismiss]");
+  const sessionKey = "iwind-page-load-alert-seen";
+
+  if (!alertElement) {
+    return;
+  }
+
+  const hasSeenAlert = () => {
+    try {
+      return window.sessionStorage.getItem(sessionKey) === "true";
+    } catch {
+      return false;
+    }
+  };
+
+  const markAlertSeen = () => {
+    try {
+      window.sessionStorage.setItem(sessionKey, "true");
+    } catch {
+      // The alert still dismisses if sessionStorage is unavailable.
+    }
+  };
+
+  const dismissAlert = () => {
+    alertElement.hidden = true;
+    markAlertSeen();
+  };
+
+  if (!hasSeenAlert()) {
+    alertElement.hidden = false;
+  }
+
+  dismissButtons.forEach((button) => {
+    button.addEventListener("click", dismissAlert);
+  });
+
+  alertElement.addEventListener("click", (event) => {
+    if (event.target === alertElement) {
+      dismissAlert();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !alertElement.hidden) {
+      dismissAlert();
+    }
+  });
+}
+
 bindPlatformSwitcher();
 bindStorePopover();
+bindPageLoadAlert();
 setPlatform(getRequestedPlatform());
